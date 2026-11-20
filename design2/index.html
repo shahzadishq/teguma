@@ -27,7 +27,7 @@ button{font:inherit;color:inherit}
 .h-l{font-size:clamp(38px,5.6vw,92px);line-height:.95;font-weight:700;letter-spacing:-.035em}
 .h-m{font-size:clamp(28px,3.2vw,48px);line-height:1.05;font-weight:600;letter-spacing:-.025em}
 .lead{font-size:clamp(17px,1.35vw,21px);line-height:1.65;font-weight:300;color:var(--tx2)}
-section:not(.hero):not(.hist) .y{color:inherit;background:linear-gradient(transparent 60%,var(--y) 60%,var(--y) 90%,transparent 90%)}
+section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-gradient(transparent 60%,var(--y) 60%,var(--y) 90%,transparent 90%)}
 .outline{-webkit-text-stroke:1.5px rgba(10,10,11,.55);color:transparent}
 .line{display:block;overflow:hidden;padding-bottom:.06em}
 .line>span{display:block}
@@ -248,10 +248,10 @@ section:not(.hero):not(.hist) .y{color:inherit;background:linear-gradient(transp
 .qa .an p{padding:0 80px 34px 0;color:var(--tx2);font-size:18px;line-height:1.7;font-weight:300}
 
 /* CTA / CONTACT */
-.cta{position:relative;padding:170px 0 140px;overflow:hidden;background:var(--bg)}
-.cta .bg{position:absolute;inset:0;opacity:.22}
+.cta{position:relative;padding:170px 0 140px;overflow:hidden;background:var(--k)}
+.cta .bg{position:absolute;inset:0;opacity:1}
 .cta .bg img{width:100%;height:120%;object-fit:cover}
-.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.96) 55%)}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.72) 0%,rgba(10,10,11,.86) 45%,rgba(10,10,11,.97) 100%)}
 .cta .wrap{position:relative;z-index:2}
 .cta .big{text-align:center}
 .cta .big .h-xl{font-size:clamp(50px,10vw,180px)}
@@ -277,6 +277,24 @@ section:not(.hero):not(.hist) .y{color:inherit;background:linear-gradient(transp
 .form.sent .ok{display:flex}.form.sent .fin{display:none}
 .form .ok span{width:76px;height:76px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center}
 
+/* DARK SECTIONS */
+.dark{background:var(--k) !important;color:#fff}
+.dark .lead{color:#C7C8CB}
+.dark .label{color:#9A9DA3}
+.dark .outline{-webkit-text-stroke:1.5px rgba(255,255,255,.6)}
+.dark .y{color:var(--y)}
+.dark .btn-g{border-color:rgba(255,255,255,.28);color:#fff}.dark .btn-g .arr{background:rgba(255,255,255,.12)}.dark .btn-g:hover{color:var(--k)}
+.dark .hbar{background:rgba(255,255,255,.12)}
+.why.dark{background:var(--k2) !important}
+.dark .bx{background:var(--k3);border-color:rgba(255,255,255,.08);color:#fff}
+.dark .bx p{color:#9A9DA3}
+.dark .bx:hover{border-color:rgba(255,204,1,.55);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.dark .bx.yel{background:var(--y);color:var(--k)}.dark .bx.yel p{color:rgba(10,10,11,.7)}
+.dark .bx.img p{color:#C7C8CB}
+.dark .cl a,.dark .cl div{border-color:rgba(255,255,255,.12)}
+.dark .cl small{color:#9A9DA3}
+.dark .cl a:hover{color:var(--y)}
+.cta.dark .form{background:#fff;color:var(--tx);border:0;box-shadow:0 60px 100px -40px rgba(0,0,0,.8)}
 /* FOOTER */
 footer{background:var(--bg2);padding:110px 0 0;overflow:hidden;border-top:1px solid var(--line)}
 .fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
@@ -402,7 +420,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  </div></div>
 </section>
 
-<section class="prods" id="produkte">
+<section class="prods dark" id="produkte">
  <div class="wrap head">
   <div><span class="label"><i></i>Teguma: Unsere Produkte</span><h2 class="h-l" style="margin-top:24px">Flexibilität und<br>Qualität in <span class="outline">jedem</span> Produkt</h2></div>
   <a href="https://teguma.de/produkte/" class="btn btn-g mag">Alle Produkte erkunden <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
@@ -457,7 +475,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  </div>
 </section>
 
-<section class="why">
+<section class="why dark">
  <div class="wrap">
   <span class="label"><i></i>Warum Teguma?</span>
   <h2 class="h-l" style="margin-top:24px">Die Vorteile von Teguma<br>auf einen Blick</h2>
@@ -506,7 +524,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  </div>
 </section>
 
-<section class="cta" id="kontakt">
+<section class="cta dark" id="kontakt">
  <div class="bg"><img id="ctaImg" src="https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp" alt=""></div>
  <div class="wrap">
   <div class="big">
