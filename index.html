@@ -53,7 +53,7 @@ h2{font-size:clamp(34px,4.2vw,52px);line-height:1.08;font-weight:700}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(12,13,14,.94) 0%,rgba(12,13,14,.78) 42%,rgba(12,13,14,.25) 100%)}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;z-index:1;background:linear-gradient(0deg,rgba(12,13,14,.85),transparent)}
 .hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-top:120px;padding-bottom:110px}
-.hero h1{font-size:clamp(44px,6vw,84px);line-height:.98;font-weight:800;text-transform:uppercase;margin:22px 0 26px}
+.hero h1{font-size:clamp(38px,4.3vw,64px);line-height:1.02;font-weight:800;text-transform:uppercase;margin:22px 0 26px}
 .hero h1 span{color:var(--y);display:block}
 .hero p.lead{font-size:20px;line-height:1.6;color:#D7D9DC;max-width:560px;margin:0 0 36px;font-weight:300}
 .hero .ctas{display:flex;gap:16px;flex-wrap:wrap}
@@ -79,7 +79,7 @@ h2{font-size:clamp(34px,4.2vw,52px);line-height:1.08;font-weight:700}
 .cert3d span{display:block;text-align:center;font-size:12px;font-weight:700;color:var(--k);padding-top:6px}
 .ring3d{position:absolute;left:-2%;bottom:6%;width:170px;height:170px;transform-style:preserve-3d;transform:translateZ(150px) rotateX(64deg)}
 .ring3d .spin{position:absolute;inset:0;transform-style:preserve-3d;animation:spin 14s linear infinite}
-.ring3d i{position:absolute;inset:0;border-radius:50%;-webkit-mask:radial-gradient(circle,transparent 55%,#000 55.8%);mask:radial-gradient(circle,transparent 55%,#000 55.8%)}
+.ring3d i{position:absolute;inset:0;border-radius:50%;-webkit-mask:radial-gradient(circle,transparent 66%,#000 66.8%);mask:radial-gradient(circle,transparent 66%,#000 66.8%)}
 @keyframes spin{to{transform:rotateZ(360deg)}}
 .scrollhint{position:absolute;left:50%;bottom:28px;z-index:2;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C9CCD0}
 .scrollhint i{width:2px;height:40px;background:linear-gradient(var(--y),transparent);animation:drop 1.8s ease-in-out infinite}
@@ -289,9 +289,9 @@ footer p{margin:18px 0 0;line-height:1.7}
     <span class="badge">ISO 9001:2015 zertifiziert</span>
    </div>
    <h1>
-    <span class="reveal-line"><span style="color:#fff;display:block">Seit dem</span></span>
-    <span class="reveal-line"><span style="color:#fff;display:block">19. Jahrhundert</span></span>
-    <span class="reveal-line"><span>zuverlässiger Partner</span></span>
+    <span class="reveal-line"><span style="color:#fff;display:block">Seit dem 19. Jahrhundert</span></span>
+    <span class="reveal-line"><span>zuverlässiger</span></span>
+    <span class="reveal-line"><span>Partner</span></span>
    </h1>
    <p class="lead">Teguma GmbH in Halberstadt ist ein zertifizierter Hersteller hochwertiger Gummiprodukte. Unser familiengeführter Betrieb bietet zuverlässige Lösungen seit dem 19. Jahrhundert.</p>
    <div class="ctas">
@@ -435,7 +435,7 @@ footer p{margin:18px 0 0;line-height:1.7}
   <form class="form rv" id="form" novalidate aria-label="Anfrage an die Teguma GmbH">
    <div class="fin">
     <h3>Anfrage an Teguma</h3>
-    <p class="sub">Wir antworten in der Regel innerhalb eines Werktages.</p>
+    <p class="sub">Ihre Anfrage geht direkt an unser Team in Halberstadt.</p>
     <div class="frow">
      <div class="field"><label for="f1">Name*</label><input id="f1" name="name" autocomplete="name" required></div>
      <div class="field"><label for="f2">Telefonnummer*</label><input id="f2" name="tel" type="tel" autocomplete="tel" required></div>
@@ -479,9 +479,9 @@ footer p{margin:18px 0 0;line-height:1.7}
 
  // 3D rubber ring (black rubber + yellow edge)
  var ring=document.getElementById('ring'),h='';
- for(var i=0;i<22;i++){var t=i/21,L=Math.round(10+12*Math.sin(t*Math.PI));h+='<i style="transform:translateZ('+(i*2-22)+'px);background:hsl(220,4%,'+L+'%)"></i>';}
- h+='<i style="transform:translateZ(22px);background:conic-gradient(from 200deg,#1c1d1f,#4a4d52 12%,#1a1b1d 30%,#111 55%,#3d4045 72%,#1c1d1f)"></i>';
- h+='<i style="transform:translateZ(23px) scale(.82);background:#FFCC01;-webkit-mask:radial-gradient(circle,transparent 66%,#000 67%,#000 72%,transparent 73%);mask:radial-gradient(circle,transparent 66%,#000 67%,#000 72%,transparent 73%)"></i>';
+ for(var i=0;i<14;i++){var t=i/13,L=Math.round(12+16*Math.sin(t*Math.PI));h+='<i style="transform:translateZ('+(i*1.5-10)+'px);background:hsl(220,4%,'+L+'%)"></i>';}
+ h+='<i style="transform:translateZ(11px);background:conic-gradient(from 200deg,#1c1d1f,#4a4d52 12%,#1a1b1d 30%,#111 55%,#3d4045 72%,#1c1d1f)"></i>';
+ h+='<i style="transform:translateZ(12px);background:#FFCC01;-webkit-mask:radial-gradient(circle,transparent 80%,#000 81%,#000 85%,transparent 86%);mask:radial-gradient(circle,transparent 80%,#000 81%,#000 85%,transparent 86%)"></i>';
  ring.innerHTML=h;
 
  // hero mouse 3D + parallax
