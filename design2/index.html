@@ -134,10 +134,11 @@ button{font:inherit;color:inherit}
 
 /* PRODUCTS horizontal */
 .prods{position:relative;background:var(--k);overflow:hidden}
-.prods .head{padding:150px 0 70px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
-.hs{display:flex;gap:28px;padding:0 0 150px max(32px,calc((100vw - 1320px)/2));width:max-content}
+.prods .head{padding:150px 0 30px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.hsw{position:relative;height:100vh;display:flex;align-items:center;overflow:hidden}
+.hs{display:flex;gap:28px;padding:0 0 0 max(32px,calc((100vw - 1320px)/2));width:max-content}
 .pc{position:relative;width:min(460px,78vw);flex:0 0 auto;border-radius:28px;overflow:hidden;background:var(--k3);cursor:none}
-.pc .im{height:520px;overflow:hidden;background:#E9E9E9}
+.pc .im{height:min(560px,72vh);overflow:hidden;background:#E9E9E9}
 .pc .im img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform 1.2s var(--ease)}
 .pc:hover .im img{transform:scale(1.02)}
 .pc .ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.5) 34%,transparent 60%);pointer-events:none}
@@ -150,7 +151,7 @@ button{font:inherit;color:inherit}
 .pc:hover .go{transform:scale(1) rotate(0)}
 .pc.end{width:min(380px,70vw);background:var(--y);color:var(--k);display:flex;flex-direction:column;justify-content:space-between;padding:40px}
 .pc.end h3{font-size:44px;line-height:1}
-.hbar{position:absolute;left:max(32px,calc((100vw - 1320px)/2));right:max(32px,calc((100vw - 1320px)/2));bottom:80px;height:2px;background:var(--line)}
+.hbar{position:absolute;left:max(32px,calc((100vw - 1320px)/2));right:max(32px,calc((100vw - 1320px)/2));bottom:5vh;height:2px;background:var(--line)}
 .hbar i{display:block;height:100%;width:100%;background:var(--y);transform-origin:0 50%;transform:scaleX(0)}
 
 /* STATS */
@@ -289,7 +290,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  .intro{padding:120px 0 90px}.intro .row,.sg,.fr{grid-template-columns:1fr}
  .sg .s:nth-child(2n){padding-left:0;border-left:0}
  .bento{grid-template-columns:1fr;grid-auto-rows:auto}.bx{min-height:220px}.bx.wide,.bx.tall{grid-column:auto;grid-row:auto}.bx.img{min-height:320px}
- .hs{flex-direction:column;width:auto;padding:0 20px 100px}.pc,.pc.end{width:100%}.pc .im{height:400px}.pc p{max-height:none;opacity:1}.pc .go{transform:none}.hbar{display:none}
+ .hsw{height:auto;display:block}.hs{flex-direction:column;width:auto;padding:30px 20px 100px}.pc,.pc.end{width:100%}.pc .im{height:400px}.pc p{max-height:none;opacity:1}.pc .go{transform:none}.hbar{display:none}
  .docs{height:420px}
  .form{padding:28px}
  .fg{grid-template-columns:1fr}
@@ -376,7 +377,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  <div class="new" id="histNew"><img src="https://teguma.de/wp-content/uploads/2026/11/admin-ajax-4.png" alt="Das Teguma Werk in Halberstadt heute"></div>
  <div class="tx"><div class="wrap" style="position:relative">
   <div class="yr" style="position:relative">
-   <b class="y1" id="y1">1854</b><p class="cap c1" id="c1">Mechanische Manufactur technischer Gummiwaaren – Halberstadt, Preussen.</p>
+   <b class="y1" id="y1">1854</b><p class="cap c1" id="c1">„Mechanische Manufactur technischer Gewebe“ – Halberstadt, Preussen.</p>
    <div class="y2" id="y2" style="display:flex;align-items:flex-end;gap:24px"><b>Heute</b><p class="cap" style="color:#fff">Zertifizierter Hersteller nach ISO 9001:2015 – mit Kunden in über 25 Ländern.</p></div>
   </div>
  </div></div>
@@ -387,6 +388,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   <div><span class="label"><i></i>Teguma: Unsere Produkte</span><h2 class="h-l" style="margin-top:24px">Flexibilität und<br>Qualität in <span class="outline">jedem</span> Produkt</h2></div>
   <a href="https://teguma.de/produkte/" class="btn btn-g mag">Alle Produkte erkunden <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
  </div>
+ <div class="hsw" id="hsw">
  <div class="hs" id="hs">
   <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiformteile_waggonuebergaenge-01nn-512x384-1-2.webp" alt="Gummiformteile im Waggonbau"></div><div class="ov"></div><span class="no">01</span><div class="bd"><h3>Gummiformteile<br>im Waggonbau</h3><p>Formteile für Schienenfahrzeuge – brandschutzgerecht nach DIN EN 45545-2 und DIN 5510-2.</p></div><span class="go">→</span></a>
   <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-min-1-2.png" alt="Besenschläuche"></div><div class="ov"></div><span class="no">02</span><div class="bd"><h3>Besen&shy;schläuche</h3><p>Robuste Besen- und Bürstenschläuche für Kehr- und Reinigungstechnik.</p></div><span class="go">→</span></a>
@@ -396,7 +398,9 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   <a class="pc" href="https://teguma.de/gummiplatten/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-512x384-1-2.jpg" alt="Gummiplatten"></div><div class="ov"></div><span class="no">06</span><div class="bd"><h3>Gummi&shy;platten</h3><p>Gummiplatten und Zuschnitte in vielen Qualitäten und Stärken.</p></div><span class="go">→</span></a>
   <a class="pc end" href="#kontakt"><span class="label" style="color:rgba(10,10,11,.6)"><i style="background:#0A0A0B"></i>Sonderanfertigung</span><h3>Ihr Bauteil ist nicht dabei?</h3><span class="btn btn-k" style="align-self:flex-start">Anfrage senden <span class="arr">→</span></span></a>
  </div>
+ </div>
  <div class="hbar"><i id="hbar"></i></div>
+ </div>
 </section>
 
 <section class="stats" aria-label="Teguma in Zahlen">
@@ -616,8 +620,8 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  mm.add('(min-width: 701px)',function(){
   var hs=$('#hs');
   var dist=function(){return hs.scrollWidth-innerWidth+Math.max(32,(innerWidth-1320)/2)};
-  var tw=gsap.to(hs,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'#produkte',start:'top top',end:function(){return '+='+dist()},scrub:1,pin:true,invalidateOnRefresh:true}});
-  gsap.to('#hbar',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#produkte',start:'top top',end:function(){return '+='+dist()},scrub:true}});
+  var tw=gsap.to(hs,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'#hsw',start:'top top',end:function(){return '+='+dist()},scrub:1,pin:true,invalidateOnRefresh:true}});
+  gsap.to('#hbar',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#hsw',start:'top top',end:function(){return '+='+dist()},scrub:true}});
   $$('.pc .im img').forEach(function(im){gsap.fromTo(im,{xPercent:-8},{xPercent:8,ease:'none',scrollTrigger:{trigger:im.closest('.pc'),containerAnimation:tw,start:'left right',end:'right left',scrub:true}})});
  });
 
