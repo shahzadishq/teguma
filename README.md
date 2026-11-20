@@ -1,11 +1,11 @@
 # Teguma – Neue Startseite
 
-Neues Startseiten-Design für [teguma.de](https://teguma.de/) mit 3D-Hero (rotierende Gummidichtung, folgt der Maus), 3D-Hover-Produktkarten, FAQ-Akkordeon und neuem Kontaktbereich.
+Neues Startseiten-Design für [teguma.de](https://teguma.de/) im Teguma-Branding (Logo, Gelb #FFCC01 / Schwarz #0C0D0E, Schrift Outfit, originale Fotos von teguma.de).
 
-- `index.html` – eigenständige Seite, direkt im Browser öffnen (keine Abhängigkeiten außer Google Fonts).
-- `design/Main.dc.html` – Quelldatei des Claude-Design-Canvas.
+Live: https://shahzadishq.github.io/teguma/
+
+Effekte: 3D-Hero (Maus-Parallax, schwebendes Werksfoto, „Seit 1854“-Badge, ISO-Zertifikat, rotierender Gummiring), 3D-Tilt-Produktkarten mit Lichtreflex, 3D-Bildstapel, animierte Zähler, Scroll-Reveal, FAQ-Akkordeon.
 
 Hinweise:
-- Das Kontaktformular ist nur ein Demo – an das Formular-Plugin (z. B. Contact Form 7 / WPForms) anbinden.
-- Die DE/EN-Buttons sind nur optisch – an das Übersetzungs-Plugin anbinden.
-- Produkt-Illustrationen können durch echte Produktfotos ersetzt werden.
+- Bilder werden direkt von teguma.de geladen.
+- Kontaktformular ist ein Demo – in WordPress an das Formular-Plugin anbinden.
