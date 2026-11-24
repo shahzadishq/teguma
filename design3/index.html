@@ -244,6 +244,51 @@ footer .ctl a:hover span{color:var(--y)}
 .rv.pre{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
 .rv.pre.l{transform:translateX(-36px)}.rv.pre.r{transform:translateX(36px)}
 .rv.pre.in{opacity:1;transform:none}
+
+/* ---- stronger entrance + glow effects ---- */
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(8vw,6vh) scale(1.2)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-9vw,-5vh) scale(.9)}}
+@keyframes shine{to{background-position:-200% 0}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,204,1,.55)}100%{box-shadow:0 0 0 18px rgba(255,204,1,0)}}
+@keyframes sweep{from{transform:translateX(-120%) skewX(-18deg)}to{transform:translateX(320%) skewX(-18deg)}}
+.hero .aur{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.hero .aur i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.hero .aur i:nth-child(1){width:46vw;height:46vw;left:-10vw;top:-12vw;background:radial-gradient(circle,rgba(255,204,1,.55),transparent 65%);animation:drift1 16s ease-in-out infinite}
+.hero .aur i:nth-child(2){width:38vw;height:38vw;right:-8vw;bottom:-14vw;background:radial-gradient(circle,rgba(255,170,0,.4),transparent 65%);animation:drift2 19s ease-in-out infinite}
+.hero .aur::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 30% 40%,#000,transparent 72%);mask-image:radial-gradient(ellipse at 30% 40%,#000,transparent 72%)}
+.hero .glow{position:absolute;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;z-index:1;pointer-events:none;background:radial-gradient(circle,rgba(255,204,1,.22),transparent 62%);transform:translate(var(--gx,50vw),var(--gy,40%));opacity:0;transition:opacity .6s}
+.hero:hover .glow{opacity:1}
+.hero .bgi{translate:0 var(--py,0px)}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .w>i{display:inline-block;font-style:normal;transform:translateY(112%) rotate(4deg);transform-origin:0 100%;animation:wup 1s cubic-bezier(.16,.84,.24,1) forwards;animation-delay:calc(.25s + var(--n)*.07s)}
+@keyframes wup{to{transform:none}}
+.hero h1{animation:none}
+.hero h1 .w{color:inherit}
+.hero h1>span:not(.w) .w>i{background:linear-gradient(100deg,var(--y) 30%,#fff3b0 48%,var(--y) 66%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:wup 1s cubic-bezier(.16,.84,.24,1) forwards,shine 5s linear 2s infinite;animation-delay:calc(.25s + var(--n)*.07s),2s}
+.hero .tag{color:var(--y)}
+.btn.y{animation:pulse 2.6s 2s infinite}
+.hero .chip{transition:transform .35s,border-color .35s}.hero .chip:hover{transform:translateY(-4px)}
+.fb,.pc,.wi,.st,.cnt .c{position:relative}
+.fb::before,.pc::before,.wi::before,.st::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,204,1,.2),transparent 65%)}
+.fb:nth-child(1)::before{background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.5),transparent 65%)}
+.fb:hover::before,.pc:hover::before,.wi:hover::before,.st:hover::before{opacity:1}
+.fb,.wi,.st{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.fb:hover,.wi:hover,.st:hover{transform:translateY(-6px);box-shadow:0 28px 40px -26px rgba(0,0,0,.45)}
+.pc{transition:box-shadow .3s,border-color .3s,transform .4s cubic-bezier(.2,.7,.2,1)}.pc:hover{transform:translateY(-6px)}
+.title{background:none}
+.abimg,.wimg{clip-path:none;transition:clip-path 1.1s cubic-bezier(.77,0,.18,1),opacity .9s,transform .9s}
+.abimg.pre.in,.wimg.pre.in{clip-path:inset(-90px)}
+.abimg.pre:not(.in){clip-path:inset(0 100% 0 0)}
+.wimg.pre:not(.in){clip-path:inset(0 0 0 100%)}
+.rv.pre{opacity:0;transform:translateY(46px) scale(.94);filter:blur(8px);transition:opacity .9s cubic-bezier(.16,.84,.24,1),transform .9s cubic-bezier(.16,.84,.24,1),filter .9s}
+.rv.pre.l{transform:translateX(-70px) scale(.96)}.rv.pre.r{transform:translateX(70px) scale(.96)}
+.rv.pre.in{filter:none}
+.sh.pre{transform:translateY(34px);filter:blur(6px)}
+.cta{position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:0;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);animation:sweep 5.5s 1s ease-in-out infinite;pointer-events:none}
+.cnt .c b{text-shadow:0 0 34px rgba(255,204,1,.35)}
+@media (hover:none){.hero .glow{display:none}}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none !important;animation:none !important}.rv.pre{opacity:1;transform:none}html{scroll-behavior:auto}}
 
 /* responsive */
@@ -337,6 +382,8 @@ footer .ctl a:hover span{color:var(--y)}
 <main>
 <section class="hero">
  <div class="bgi"></div>
+ <div class="aur"><i></i><i></i></div>
+ <div class="glow" id="glow"></div>
  <div class="wrap">
   <span class="tag">Seit 1854 · Made in Germany</span>
   <h1>Gummitechnik aus Halberstadt – <span>zuverlässig seit dem 19. Jahrhundert</span></h1>
@@ -543,6 +590,24 @@ footer .ctl a:hover span{color:var(--y)}
  }
  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
 
+ /* headline: word-by-word rise */
+ var h1=$('.hero h1');
+ if(h1&&!calm){var n=0;(function split(node){[].slice.call(node.childNodes).forEach(function(c){
+  if(c.nodeType===3){var fr=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(t){
+   if(!t)return;if(/^\s+$/.test(t)){fr.appendChild(document.createTextNode(' '));return}
+   var w=document.createElement('span');w.className='w';var i=document.createElement('i');i.textContent=t;i.style.setProperty('--n',n++);w.appendChild(i);fr.appendChild(w)});
+   node.replaceChild(fr,c)}else if(c.nodeType===1)split(c)})})(h1);}
+ /* hero glow follows pointer, bg parallax */
+ var hero=$('.hero'),glow=$('#glow'),gx=0,gy=0,tx=0,ty=0;
+ if(hero&&!calm&&matchMedia('(hover:hover)').matches){
+  hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();tx=e.clientX-r.left;ty=e.clientY-r.top});
+  (function loop(){gx+=(tx-gx)*.08;gy+=(ty-gy)*.08;glow.style.setProperty('--gx',gx+'px');glow.style.setProperty('--gy',gy+'px');requestAnimationFrame(loop)})();
+ }
+ if(hero&&!calm)window.addEventListener('scroll',function(){if(scrollY<innerHeight*1.2)hero.style.setProperty('--py',(scrollY*.22)+'px')},{passive:true});
+ /* spotlight on cards */
+ if(!calm)$$('.fb,.pc,.wi,.st').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+ /* section headings rise in too */
+ $$('section:not(.hero) .tag,section:not(.hero) .title').forEach(function(e){if(!e.closest('.rv'))e.classList.add('rv','sh')});
  /* gentle reveals, staggered inside grids */
  var els=$$('.rv');
  [['.fx .grid','.fb'],['.pgrid','.pc'],['.cnt .wrap','.c'],['.wl','.wi'],['.steps','.st']].forEach(function(g){
@@ -550,9 +615,9 @@ footer .ctl a:hover span{color:var(--y)}
  });
  if('IntersectionObserver' in window&&!calm){
   els.forEach(function(e){e.classList.add('pre')});
-  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var t=x.target;t.classList.add('in');io.unobserve(t);
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var t=mp.get(x.target)||x.target;t.classList.add('in');io.unobserve(x.target);
    setTimeout(function(){t.classList.remove('pre','in');t.style.transitionDelay=''},1500);}})},{threshold:.1});
-  els.forEach(function(e){io.observe(e)});
+  var mp=new WeakMap();els.forEach(function(e){var t=(e.classList.contains('abimg')||e.classList.contains('wimg'))?e.parentElement:e;mp.set(t,e);io.observe(t)});
  }
 
  /* numbers count up once */
