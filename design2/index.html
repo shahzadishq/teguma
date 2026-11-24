@@ -162,6 +162,18 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .hc p{margin-top:14px;font-size:18px;line-height:1.6;color:var(--tx2)}
 .hc.new p{color:rgba(10,10,11,.8)}
 
+/* HISTORIE variant: large image + text */
+.hb{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:70px;align-items:center;margin-top:70px}
+.hb .ph{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:#F2EFE6}
+.hb .ph img{width:100%;height:100%;object-fit:contain;padding:24px}
+.hb .big{font-size:clamp(70px,9vw,150px);font-weight:800;letter-spacing:-.05em;line-height:.85}
+.hb h3{font-size:clamp(24px,2.2vw,32px);font-weight:600;letter-spacing:-.02em;margin-top:22px;line-height:1.2}
+.hb p{margin-top:16px;font-size:19px;line-height:1.65;color:var(--tx2);max-width:520px}
+.hb .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.hb .facts span{height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;font-weight:500;font-size:15px}
+.hb .facts span:first-child{background:var(--y);border-color:var(--y)}
+@media (max-width:900px){.hb{grid-template-columns:1fr;gap:40px}}
+
 /* PRODUCTS: calm grid */
 .prods{background:var(--bg);padding:150px 0}
 .prods .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
@@ -443,9 +455,14 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  <div class="wrap">
   <span class="label"><i></i>Unsere Geschichte</span>
   <h2 class="h-l" style="margin-top:24px">Von 1854<br>bis <span class="y">heute.</span></h2>
-  <div class="hg">
-   <div class="hc old"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/teguma-halberstadt-1.webp" alt="Historische Ansicht des Teguma Werks in Halberstadt" loading="lazy"></div><div class="bd"><div class="yr">1854</div><p>„Mechanische Manufactur technischer Gewebe“ – Halberstadt, Preussen.</p></div></div>
-   <div class="hc new"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/11/admin-ajax-4.png" alt="Das Teguma Werk in Halberstadt heute" loading="lazy"></div><div class="bd"><div class="yr">Heute</div><p>Zertifizierter Hersteller nach ISO 9001:2015 – mit Kunden in über 25 Ländern.</p></div></div>
+  <div class="hb">
+   <div class="ph"><img src="https://teguma.de/wp-content/uploads/2026/03/teguma-halberstadt-1.webp" alt="Historische Ansicht des Teguma Werks in Halberstadt" loading="lazy"></div>
+   <div>
+    <div class="big">1854</div>
+    <h3>„Mechanische Manufactur technischer Gewebe“ – Halberstadt, Preussen.</h3>
+    <p>Aus der Manufaktur von damals ist ein zertifizierter Hersteller nach ISO 9001:2015 geworden – mit Kunden in über 25 Ländern.</p>
+    <div class="facts"><span>Familienbetrieb</span><span>Halberstadt</span><span>ISO 9001:2015</span><span>25+ Länder</span></div>
+   </div>
   </div>
  </div>
 </section>

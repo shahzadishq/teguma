@@ -49,7 +49,7 @@ h2{font-size:clamp(34px,4.2vw,52px);line-height:1.08;font-weight:700}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;min-height:max(100vh,760px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--k);perspective:1600px}
-.hero-bg{position:absolute;inset:-40px;background:url("https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp") center/cover no-repeat;transform:scale(1.08);transition:transform .2s linear;will-change:transform}
+.hero-bg{position:absolute;inset:-40px;background:url("https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp") center/cover no-repeat;transform:scale(1.08)}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(12,13,14,.94) 0%,rgba(12,13,14,.78) 42%,rgba(12,13,14,.25) 100%)}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;z-index:1;background:linear-gradient(0deg,rgba(12,13,14,.85),transparent)}
 .hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-top:120px;padding-bottom:110px}
@@ -98,11 +98,9 @@ h2{font-size:clamp(34px,4.2vw,52px);line-height:1.08;font-weight:700}
 .about{padding:130px 0;background:#fff;position:relative}
 .about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:center}
 .stack{position:relative;height:540px;perspective:1400px}
-.stack .layer{position:absolute;transition:transform .6s cubic-bezier(.2,.7,.2,1);box-shadow:0 40px 70px -30px rgba(0,0,0,.45)}
+.stack .layer{position:absolute;box-shadow:0 40px 70px -30px rgba(0,0,0,.45)}
 .stack .l1{left:0;top:0;width:74%;height:76%;transform:rotateY(14deg) rotateX(4deg)}
 .stack .l2{right:0;bottom:0;width:58%;height:54%;border:8px solid #fff;transform:rotateY(14deg) rotateX(4deg) translateZ(80px)}
-.stack:hover .l1{transform:rotateY(0) rotateX(0) translateX(-10px)}
-.stack:hover .l2{transform:rotateY(0) rotateX(0) translateZ(40px) translateX(10px)}
 .stack img{width:100%;height:100%;object-fit:cover}
 .stack .yb{position:absolute;left:-26px;bottom:60px;width:120px;height:120px;background:var(--y);z-index:-1}
 .about p{font-size:18px;line-height:1.75;color:var(--t);font-weight:300;margin:22px 0 34px}
@@ -482,16 +480,7 @@ footer p{margin:18px 0 0;line-height:1.7}
  for(var i=0;i<14;i++){var t=i/13,L=Math.round(12+16*Math.sin(t*Math.PI));h+='<i style="transform:translateZ('+(i*1.5-10)+'px);background:hsl(220,4%,'+L+'%)"></i>';}
  h+='<i style="transform:translateZ(11px);background:conic-gradient(from 200deg,#1c1d1f,#4a4d52 12%,#1a1b1d 30%,#111 55%,#3d4045 72%,#1c1d1f)"></i>';
  h+='<i style="transform:translateZ(12px);background:#FFCC01;-webkit-mask:radial-gradient(circle,transparent 80%,#000 81%,#000 85%,transparent 86%);mask:radial-gradient(circle,transparent 80%,#000 81%,#000 85%,transparent 86%)"></i>';
- ring.innerHTML=h;
-
- // hero mouse 3D + parallax
- var hero=document.getElementById('hero'),tilt=document.getElementById('tilt'),bg=document.getElementById('heroBg');
- hero.addEventListener('mousemove',function(e){
-  var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-  tilt.style.transform='rotateX('+(8-y*16)+'deg) rotateY('+(-16+x*26)+'deg)';
-  bg.style.transform='scale(1.08) translate('+(-x*24)+'px,'+(-y*16)+'px)';
- });
- hero.addEventListener('mouseleave',function(){tilt.style.transform='rotateX(8deg) rotateY(-16deg)';bg.style.transform='scale(1.08)';});
+ if(ring)ring.innerHTML=h;
 
  // product cards 3D tilt + glare
  document.querySelectorAll('.pcard').forEach(function(c){
