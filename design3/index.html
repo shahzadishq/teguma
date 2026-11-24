@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teguma GmbH – Gummitechnik aus Halberstadt seit 1854</title>
+<meta name="description" content="Teguma GmbH in Halberstadt: zertifizierter Hersteller hochwertiger Gummiformteile, Dichtungen, Gummiplatten, Gummigewebe und Besenschläuche – seit 1854.">
+<link rel="icon" href="https://teguma.de/wp-content/uploads/2026/03/teguma-2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFCC01;--y2:#E6B800;--k:#0C0D0E;--k2:#16181A;--g:#F5F5F3;--t:#4A4E55;--m:#7A7F87;--line:#E4E4E0;--hd:"Barlow Condensed","Arial Narrow",sans-serif;--bd:Barlow,system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;font-family:var(--bd);font-size:17px;line-height:1.65;color:var(--t);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-family:var(--hd);color:var(--k);text-transform:uppercase;letter-spacing:.01em;line-height:1.05;font-weight:700}
+p{margin:0}
+.wrap{width:min(1240px,100% - 48px);margin:0 auto}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+
+/* generic */
+.sec{padding:110px 0}
+.sec.grey{background:var(--g)}
+.tag{display:inline-flex;align-items:center;gap:12px;font-family:var(--hd);font-weight:600;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#A98600}
+.tag::before{content:"";width:34px;height:3px;background:var(--y)}
+.dark .tag,.hero .tag{color:var(--y)}
+.title{font-size:clamp(36px,4.2vw,58px);margin-top:14px}
+.center{text-align:center}.center .tag{justify-content:center}
+.lead{margin-top:20px;max-width:640px}
+.center .lead{margin-left:auto;margin-right:auto}
+.btn{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 32px;font-family:var(--hd);font-weight:700;font-size:19px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);transition:background .25s,color .25s}
+.btn.y{background:var(--y);color:var(--k)}.btn.y:hover{background:var(--k);color:#fff}
+.btn.k{background:var(--k);color:#fff}.btn.k:hover{background:var(--y);color:var(--k)}
+.btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55);clip-path:none}.btn.o:hover{background:#fff;color:var(--k)}
+.btn svg{font-size:18px}
+
+/* topbar */
+.topbar{background:var(--k);color:#C9CCD0;font-size:15px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:44px}
+.topbar .l,.topbar .r{display:flex;align-items:center;gap:28px}
+.topbar a,.topbar span.it{display:inline-flex;align-items:center;gap:9px}
+.topbar svg{color:var(--y);font-size:16px}
+.topbar a:hover{color:#fff}
+.topbar .lng a{padding:0 8px;font-weight:600}.topbar .lng a.on{color:var(--y)}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:60;background:#fff;box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:92px}
+.hdr .logo img{height:50px;width:auto}
+.nav{display:flex;gap:6px}
+.nav a{position:relative;padding:34px 16px;font-family:var(--hd);font-weight:600;font-size:20px;letter-spacing:.06em;text-transform:uppercase;color:var(--k);transition:color .2s}
+.nav a::after{content:"";position:absolute;left:16px;right:16px;bottom:24px;height:3px;background:var(--y);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav a:hover::after,.nav a.act::after{transform:scaleX(1)}
+.hr{display:flex;align-items:center;gap:28px}
+.call{display:flex;align-items:center;gap:14px}
+.call .ic{width:50px;height:50px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-size:22px}
+.call small{display:block;font-size:13px;color:var(--m);line-height:1.2}
+.call b{white-space:nowrap;font-family:var(--hd);font-size:22px;color:var(--k);letter-spacing:.02em;line-height:1.2}
+.burger{display:none;width:48px;height:48px;border:0;background:var(--y);color:var(--k);font-size:24px;cursor:pointer;align-items:center;justify-content:center}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--k) url("https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp") center/cover no-repeat;padding:140px 0 190px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,14,.93) 0%,rgba(12,13,14,.78) 48%,rgba(12,13,14,.35) 100%)}
+.hero .wrap{position:relative}
+.hero h1{color:#fff;font-size:clamp(46px,6.6vw,96px);line-height:.98;margin:20px 0 26px;max-width:880px}
+.hero h1 span{color:var(--y)}
+.hero p{font-size:20px;line-height:1.7;color:#D5D8DC;max-width:600px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px}
+.hero .side{position:absolute;right:0;bottom:-10px;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.hero .chip{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 18px;background:rgba(12,13,14,.55);border-left:4px solid var(--y);font-weight:600;font-size:16px;backdrop-filter:blur(6px)}
+
+/* feature boxes overlapping hero */
+.fx{position:relative;z-index:5;margin-top:-90px}
+.fx .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.fb{display:flex;gap:22px;align-items:flex-start;padding:40px 36px;background:#fff}
+.fb:nth-child(1){background:var(--y)}
+.fb:nth-child(2){background:var(--k);color:#B7BBC1}.fb:nth-child(2) h3{color:#fff}
+.fb .ic{width:64px;height:64px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:34px;background:var(--k);color:var(--y)}
+.fb:nth-child(1) .ic{background:var(--k);color:var(--y)}
+.fb:nth-child(2) .ic{background:var(--y);color:var(--k)}
+.fb:nth-child(3) .ic{background:var(--y);color:var(--k)}
+.fb h3{font-size:28px;margin-bottom:8px}
+.fb p{font-size:16px;line-height:1.55}
+.fb>div{min-width:0}
+.fb:nth-child(1) p{color:rgba(12,13,14,.8)}
+
+/* about */
+.ab{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:90px;align-items:center}
+.abimg{position:relative;padding:0 0 70px 0}
+.abimg .m{width:82%;aspect-ratio:4/5;object-fit:cover;background:#E9E9E6}
+.abimg .s{position:absolute;right:0;bottom:0;width:54%;aspect-ratio:1;object-fit:cover;border:10px solid #fff;background:#E9E9E6;box-shadow:0 30px 50px -28px rgba(0,0,0,.5)}
+.abimg .badge{position:absolute;left:-22px;top:46px;background:var(--y);color:var(--k);padding:22px 28px;text-align:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.45)}
+.abimg .badge b{display:block;font-family:var(--hd);font-size:58px;line-height:1}
+.abimg .badge span{font-family:var(--hd);font-size:18px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.ab p.txt{margin-top:22px}
+.ticks{list-style:none;padding:0;margin:28px 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--k)}
+.ticks svg{margin-top:4px;color:var(--k);background:var(--y);width:22px;height:22px;padding:4px;stroke-width:2.6}
+.abf{display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+
+/* products */
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:64px}
+.pc{background:#fff;border:1px solid var(--line);transition:box-shadow .3s,border-color .3s}
+.pc:hover{box-shadow:0 30px 50px -34px rgba(0,0,0,.45);border-color:var(--y)}
+.pc .im{position:relative}
+.pc .pw{aspect-ratio:4/3;overflow:hidden;background:#E9E9E6}
+.pc .pw img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pc:hover .pw img{transform:scale(1.04)}
+.pc .ic{position:absolute;right:24px;bottom:-30px;width:60px;height:60px;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-size:30px;z-index:2}
+.pc .bd{padding:34px 30px 30px}
+.pc h3{font-size:30px}
+.pc p{margin-top:12px;font-size:16.5px}
+.pc .more{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:var(--hd);font-weight:700;font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--k);border-bottom:3px solid var(--y);padding-bottom:2px}
+.pc .more svg{transition:transform .25s}.pc:hover .more svg{transform:translateX(4px)}
+
+/* counters */
+.cnt{position:relative;color:#fff;background:var(--k) url("https://teguma.de/wp-content/uploads/2026/03/World-Map-min-3.png") center/80% no-repeat;padding:90px 0}
+.cnt::before{content:"";position:absolute;inset:0;background:rgba(12,13,14,.9)}
+.cnt .wrap{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.cnt .c{padding:10px 30px;border-left:1px solid rgba(255,255,255,.14);text-align:center}
+.cnt .c:first-child{border-left:0}
+.cnt b{display:block;font-family:var(--hd);font-size:clamp(52px,6vw,84px);line-height:1;color:var(--y);font-weight:700}
+.cnt span{display:block;margin-top:8px;font-family:var(--hd);font-size:20px;letter-spacing:.12em;text-transform:uppercase}
+
+/* why */
+.why{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:90px;align-items:center}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:38px 34px;margin-top:44px}
+.wi{display:flex;gap:18px}
+.wi .ic{width:58px;height:58px;flex:0 0 auto;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-size:28px}
+.wi>div{min-width:0}
+.wi h3{font-size:25px;margin-bottom:6px;overflow-wrap:anywhere}
+.wi p{font-size:16px;line-height:1.55}
+.wimg{position:relative}
+.wimg img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#E9E9E6}
+.wimg::before{content:"";position:absolute;top:-22px;right:-22px;width:70%;height:75%;border-top:8px solid var(--y);border-right:8px solid var(--y)}
+.wimg img{position:relative}
+.wimg .bd{position:absolute;left:24px;bottom:24px;background:var(--k);color:#fff;padding:24px 30px;z-index:2}
+.wimg .bd b{display:block;font-family:var(--hd);font-size:60px;line-height:1;color:var(--y)}
+.wimg .bd span{font-size:15px;max-width:190px;display:block;line-height:1.35}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:64px}
+.st{background:#fff;display:flex;flex-direction:column}
+.st .im{position:relative;aspect-ratio:16/10;overflow:hidden;background:#E9E9E6}
+.st .im img{width:100%;height:100%;object-fit:cover}
+.st .no{position:absolute;left:0;bottom:0;background:var(--y);color:var(--k);font-family:var(--hd);font-size:34px;font-weight:700;width:72px;height:60px;display:flex;align-items:center;justify-content:center}
+.st .bd{flex:1;padding:28px 30px 34px;border:1px solid var(--line);border-top:0}
+.st h3{font-size:30px}.st p{margin-top:10px;font-size:16.5px}
+
+/* certs */
+.ce{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:90px;align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 38px}
+.tags span{padding:8px 18px;border:1px solid var(--line);font-weight:600;font-size:15.5px;color:var(--k);background:#fff}
+.tags span:first-child{background:var(--y);border-color:var(--y)}
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:24px;background:var(--g);padding:34px}
+.docs a{display:block;background:#fff;padding:10px;border:1px solid var(--line);transition:box-shadow .3s}
+.docs a:hover{box-shadow:0 26px 40px -26px rgba(0,0,0,.5)}
+.docs img{width:100%;height:auto}
+
+/* cta */
+.cta{background:var(--y);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;right:-6%;top:0;bottom:0;width:34%;background:rgba(12,13,14,.06);transform:skewX(-18deg)}
+.cta .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;padding:64px 0}
+.cta h2{font-size:clamp(34px,4vw,54px);max-width:760px}
+.cta p{margin-top:10px;color:rgba(12,13,14,.8);font-weight:500;max-width:640px}
+.cta .r{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.cta .ph{display:flex;align-items:center;gap:14px;color:var(--k)}
+.cta .ph .ic{width:58px;height:58px;background:var(--k);color:var(--y);display:flex;align-items:center;justify-content:center;font-size:26px}
+.cta .ph small{display:block;font-weight:600;font-size:14px;line-height:1.2}
+.cta .ph b{font-family:var(--hd);font-size:30px;line-height:1.1}
+
+/* faq + contact */
+.fq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:90px}
+.fq .pp{margin-top:40px;position:relative;background:var(--y);aspect-ratio:4/4.2;overflow:hidden}
+.fq .pp img{position:absolute;bottom:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%)}
+details{border-bottom:1px solid var(--line)}
+details summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-family:var(--hd);font-weight:600;font-size:27px;color:var(--k);text-transform:uppercase;letter-spacing:.01em;line-height:1.15}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";flex:0 0 auto;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--g);font-size:28px;font-family:var(--bd);font-weight:400;color:var(--k);transition:background .2s}
+details[open] summary::after{content:"–";background:var(--y)}
+details p{padding:0 70px 28px 0;font-size:17.5px}
+.ct{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:70px;align-items:start}
+.ci{display:flex;gap:18px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.ci:first-of-type{margin-top:30px;border-top:1px solid var(--line)}
+.ci .ic{width:60px;height:60px;flex:0 0 auto;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-size:27px}
+.ci small{display:block;font-size:14px;color:var(--m);text-transform:uppercase;letter-spacing:.12em}
+.ci b{font-family:var(--hd);font-size:26px;color:var(--k);font-weight:600;line-height:1.2}
+.form{background:#fff;padding:46px;box-shadow:0 40px 70px -40px rgba(0,0,0,.35);border-top:6px solid var(--y)}
+.form h3{font-size:34px}
+.form .sub{margin:8px 0 26px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form input,.form textarea{width:100%;font:500 17px var(--bd);color:var(--k);padding:16px 18px;background:var(--g);border:1px solid transparent;outline:none;transition:border-color .2s,background .2s;margin-bottom:16px}
+.form textarea{min-height:130px;resize:vertical}
+.form input:focus,.form textarea:focus{border-color:var(--y);background:#fff}
+.form .ft{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.form small{color:var(--m)}.form small a{text-decoration:underline}
+.form .ok{display:none;padding:50px 0;text-align:center}
+.form.sent .ok{display:block}.form.sent .fin{display:none}
+
+/* footer */
+footer{background:var(--k);color:#A9ADB4;font-size:16px}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:50px;padding:90px 0 60px}
+footer h4{color:#fff;font-size:24px;letter-spacing:.06em;margin-bottom:24px;position:relative;padding-bottom:14px}
+footer h4::after{content:"";position:absolute;left:0;bottom:0;width:36px;height:3px;background:var(--y)}
+footer .lg{display:inline-block;background:#fff;padding:12px 16px;margin-bottom:22px}
+footer .lg img{height:44px;width:auto}
+footer li{list-style:none}footer ul{padding:0;margin:0}
+footer .col a{display:block;padding:5px 0;transition:color .2s,padding .2s}
+footer .col a:hover{color:var(--y);padding-left:6px}
+footer .ctl a,footer .ctl div{display:flex;gap:14px;align-items:flex-start;padding:7px 0}
+footer .ctl svg{color:var(--k);background:var(--y);width:36px;height:36px;padding:9px;flex:0 0 auto}
+footer .ctl a:hover span{color:var(--y)}
+.fbot{border-top:1px solid rgba(255,255,255,.1)}
+.fbot .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:24px 0;font-size:15px}
+
+/* gentle reveal (opacity + 18px) */
+.rv.pre{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.pre.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}.rv.pre{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1280px){.hdr .call{display:none}.nav a{padding-left:12px;padding-right:12px}.nav a::after{left:12px;right:12px}}
+@media (max-width:1100px){
+ .topbar .l .it:nth-child(2){display:none}
+ .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;padding:8px 24px 20px;box-shadow:0 24px 40px -24px rgba(0,0,0,.4)}
+ .nav.open{display:flex}.nav a{padding:16px 0;border-bottom:1px solid var(--line)}.nav a::after{display:none}
+ .burger{display:flex}.call{display:none}
+ .hero{padding:110px 0 170px}.hero .side{display:none}
+ .fx .grid{grid-template-columns:minmax(0,1fr)}
+ .ab,.why,.ce,.fq,.ct{grid-template-columns:minmax(0,1fr);gap:60px}
+ .pgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}
+ .cnt .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:30px}.cnt .c:nth-child(3){border-left:0}
+ .fg{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+@media (max-width:680px){
+ body{font-size:16.5px}
+ .sec{padding:80px 0}
+ .hero{padding:90px 0 150px}.hero h1{font-size:40px;overflow-wrap:anywhere}.fb{padding:30px 24px;gap:16px}.fb h3{font-size:25px;overflow-wrap:anywhere}.btn{padding:0 24px;font-size:18px}
+ .topbar .r .lng,.topbar .l .it{display:none}.topbar .wrap{justify-content:center}
+ .hdr .btn{display:none}
+ .pgrid,.wl,.ticks,.docs,.fr{grid-template-columns:minmax(0,1fr)}
+ .abimg .badge{left:0}.wimg::before{right:0}
+ .form{padding:28px}details p{padding-right:0}
+ .fg{grid-template-columns:minmax(0,1fr);padding:70px 0 40px}
+ .cnt .c{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5L15.5 10"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
+  <symbol id="truck" viewBox="0 0 24 24"><rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+  <symbol id="train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/></symbol>
+  <symbol id="hose" viewBox="0 0 24 24"><path d="M3 9c3-4 6 4 9 0s6-4 9 0M3 16c3-4 6 4 9 0s6-4 9 0"/></symbol>
+  <symbol id="cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3ZM12 12l8-4.5M12 12v9M12 12 4 7.5"/></symbol>
+  <symbol id="ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></symbol>
+  <symbol id="weave" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9.33h16M4 14.67h16M9.33 4v16M14.67 4v16"/></symbol>
+  <symbol id="layers" viewBox="0 0 24 24"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3ZM3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></symbol>
+  <symbol id="flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 19a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 19l-5-10V3M7.5 15h9"/></symbol>
+  <symbol id="ruler" viewBox="0 0 24 24"><path d="m3 17 14-14 4 4L7 21l-4-4ZM8 12l2 2M11 9l2 2M14 6l2 2"/></symbol>
+  <symbol id="bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11Z"/></symbol>
+  <symbol id="grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></symbol>
+  <symbol id="anchor" viewBox="0 0 24 24"><path d="M12 3v14M5 11H3a9 9 0 0 0 18 0h-2M8.5 7h7"/></symbol>
+ </defs>
+</svg>
+
+<div class="topbar">
+ <div class="wrap">
+  <div class="l">
+   <span class="it"><svg class="i"><use href="#pin"/></svg>Bleichstraße 2, 38820 Halberstadt</span>
+   <a href="mailto:info@teguma.de"><svg class="i"><use href="#mail"/></svg>info@teguma.de</a>
+  </div>
+  <div class="r">
+   <a href="tel:+49394124203"><svg class="i"><use href="#phone"/></svg>+49 (0) 3941 / 24203</a>
+   <span class="lng"><a href="https://teguma.de/" class="on">DE</a>|<a href="https://teguma.de/en/">EN</a></span>
+  </div>
+ </div>
+</div>
+
+<header class="hdr" id="hdr">
+ <div class="wrap">
+  <a class="logo" href="#" aria-label="Teguma – Startseite"><img src="https://teguma.de/wp-content/uploads/2026/03/teguma-2.png" alt="Teguma" width="127" height="50"></a>
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+   <a href="#" class="act">Startseite</a>
+   <a href="#unternehmen">Unternehmen</a>
+   <a href="#produkte">Produkte</a>
+   <a href="#prozess">Prozess</a>
+   <a href="#faq">FAQ</a>
+   <a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="hr">
+   <div class="call"><span class="ic"><svg class="i"><use href="#phone"/></svg></span><span><small>Rufen Sie uns an</small><b>+49 (0) 3941 / 24203</b></span></div>
+   <a href="#kontakt" class="btn y">Anfrage</a>
+   <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="wrap">
+  <span class="tag">Seit 1854 · Made in Germany</span>
+  <h1>Gummitechnik aus Halberstadt – <span>zuverlässig seit dem 19. Jahrhundert</span></h1>
+  <p>Zertifizierter Hersteller hochwertiger Gummiprodukte. Unser familiengeführter Betrieb bietet zuverlässige Lösungen für Industrie, Schienenfahrzeugbau und Elektrotechnik.</p>
+  <div class="ctas">
+   <a href="#produkte" class="btn y">Produkte entdecken <svg class="i"><use href="#arrow"/></svg></a>
+   <a href="#kontakt" class="btn o">Anfrage senden</a>
+  </div>
+  <div class="side"><span class="chip">ISO 9001:2015 zertifiziert</span><span class="chip">200+ eigene Gummimischungen</span><span class="chip">Kunden in über 25 Ländern</span></div>
+ </div>
+</section>
+
+<section class="fx" aria-label="Unsere Stärken">
+ <div class="wrap">
+  <div class="grid">
+   <div class="fb"><span class="ic"><svg class="i"><use href="#shield"/></svg></span><div><h3>Zertifizierte Qualität</h3><p>Zertifiziert nach ISO 9001:2015 – geprüft nach anerkannten Normen.</p></div></div>
+   <div class="fb"><span class="ic"><svg class="i"><use href="#users"/></svg></span><div><h3>Persönliche Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></div>
+   <div class="fb"><span class="ic"><svg class="i"><use href="#truck"/></svg></span><div><h3>Verlässliche Lieferung</h3><p>Die Lieferzeit beträgt in der Regel 1 bis 6 Wochen – je nach Auftrag.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="unternehmen">
+ <div class="wrap ab">
+  <div class="abimg rv">
+   <img class="m" src="https://teguma.de/wp-content/uploads/2026/11/admin-ajax-4.png" alt="Das Teguma Werk in Halberstadt heute" loading="lazy">
+   <img class="s" src="https://teguma.de/wp-content/uploads/2026/03/teguma-halberstadt-1.webp" alt="Historische Ansicht des Teguma Werks" loading="lazy">
+   <div class="badge"><b>1854</b><span>Gegründet</span></div>
+  </div>
+  <div class="rv">
+   <span class="tag">Über uns</span>
+   <h2 class="title">Teguma Halberstadt – Gummierzeugnisse mit Tradition</h2>
+   <p class="txt">Unser Familienbetrieb besteht seit Mitte des 19. Jahrhunderts und zeichnet sich durch hochwertige Gummierzeugnisse aus. Kundenzufriedenheit und Zuverlässigkeit stehen bei uns an erster Stelle.</p>
+   <p class="txt">Aus der „Mechanischen Manufactur technischer Gewebe“ von 1854 ist ein zertifizierter Hersteller geworden – mit Kunden in über 25 Ländern.</p>
+   <ul class="ticks">
+    <li><svg class="i"><use href="#check"/></svg>Über 200 eigene Gummimischungen</li>
+    <li><svg class="i"><use href="#check"/></svg>Fertigung nach Zeichnung oder Muster</li>
+    <li><svg class="i"><use href="#check"/></svg>Kleine und große Stückzahlen</li>
+    <li><svg class="i"><use href="#check"/></svg>Zertifiziert nach ISO 9001:2015</li>
+   </ul>
+   <div class="abf">
+    <a href="https://teguma.de/historie/" class="btn k">Unsere Geschichte <svg class="i"><use href="#arrow"/></svg></a>
+    <div class="call"><span class="ic"><svg class="i"><use href="#phone"/></svg></span><span><small>Beratung unter</small><b>+49 (0) 3941 / 24203</b></span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec grey" id="produkte">
+ <div class="wrap">
+  <div class="center rv"><span class="tag">Teguma: Unsere Produkte</span><h2 class="title">Flexibilität und Qualität in jedem Produkt</h2><p class="lead">Von Dichtungen über Formteile bis zu Gummiplatten – gefertigt in Halberstadt aus über 200 eigenen Gummimischungen.</p></div>
+  <div class="pgrid">
+   <a class="pc rv" href="https://teguma.de/produkte/"><div class="im"><div class="pw"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiformteile_waggonuebergaenge-01nn-512x384-1-2.webp" alt="Gummiformteile im Waggonbau" loading="lazy"></div><span class="ic"><svg class="i"><use href="#train"/></svg></span></div><div class="bd"><h3>Gummiformteile im Waggonbau</h3><p>Formteile für Schienenfahrzeuge – brandschutzgerecht nach DIN EN 45545-2 und DIN 5510-2.</p><span class="more">Mehr erfahren <svg class="i"><use href="#arrow"/></svg></span></div></a>
+   <a class="pc rv" href="https://teguma.de/produkte/"><div class="im"><div class="pw"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-min-1-2.png" alt="Besenschläuche" loading="lazy"></div><span class="ic"><svg class="i"><use href="#hose"/></svg></span></div><div class="bd"><h3>Besenschläuche</h3><p>Robuste Besen- und Bürstenschläuche für Kehr- und Reinigungstechnik.</p><span class="more">Mehr erfahren <svg class="i"><use href="#arrow"/></svg></span></div></a>
+   <a class="pc rv" href="https://teguma.de/produkte/"><div class="im"><div class="pw"><img src="https://teguma.de/wp-content/uploads/2026/03/Gummiformteile-07nn-512x384-1-2.jpg" alt="Gummiformteile" loading="lazy"></div><span class="ic"><svg class="i"><use href="#cube"/></svg></span></div><div class="bd"><h3>Gummiformteile</h3><p>Individuelle Formteile nach Zeichnung, Muster oder Spezifikation – Toleranzklassen M1–M4.</p><span class="more">Mehr erfahren <svg class="i"><use href="#arrow"/></svg></span></div></a>
+   <a class="pc rv" href="https://teguma.de/produkte/"><div class="im"><div class="pw"><img src="https://teguma.de/wp-content/uploads/2026/03/dichtungen-01nn-512x384-1-2.jpg" alt="Gummidichtungen" loading="lazy"></div><span class="ic"><svg class="i"><use href="#ring"/></svg></span></div><div class="bd"><h3>Gummidichtungen</h3><p>Zuverlässige Dichtungen aus über 200 eigenen Gummimischungen.</p><span class="more">Mehr erfahren <svg class="i"><use href="#arrow"/></svg></span></div></a>
+   <a class="pc rv" href="https://teguma.de/produkte/"><div class="im"><div class="pw"><img src="https://teguma.de/wp-content/uploads/2026/03/gummigewebe-03nn-1024x644-1-1.jpg" alt="Gummigewebe" loading="lazy"></div><span class="ic"><svg class="i"><use href="#weave"/></svg></span></div><div class="bd"><h3>Gummigewebe</h3><p>Gewebeverstärkte Gummiwerkstoffe für hohe mechanische Belastungen.</p><span class="more">Mehr erfahren <svg class="i"><use href="#arrow"/></svg></span></div></a>
+   <a class="pc rv" href="https://teguma.de/gummiplatten/"><div class="im"><div class="pw"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-512x384-1-2.jpg" alt="Gummiplatten" loading="lazy"></div><span class="ic"><svg class="i"><use href="#layers"/></svg></span></div><div class="bd"><h3>Gummiplatten</h3><p>Gummiplatten und Zuschnitte in vielen Qualitäten und Stärken.</p><span class="more">Mehr erfahren <svg class="i"><use href="#arrow"/></svg></span></div></a>
+  </div>
+ </div>
+</section>
+
+<section class="cnt" aria-label="Teguma in Zahlen">
+ <div class="wrap">
+  <div class="c"><b>1000+</b><span>Zufriedene Kunden</span></div>
+  <div class="c"><b>140</b><span>Produkte</span></div>
+  <div class="c"><b>25+</b><span>Länder</span></div>
+  <div class="c"><b>10.000+</b><span>Lieferungen</span></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap why">
+  <div class="rv">
+   <span class="tag">Warum Teguma?</span>
+   <h2 class="title">Die Vorteile von Teguma auf einen Blick</h2>
+   <div class="wl">
+    <div class="wi"><span class="ic"><svg class="i"><use href="#anchor"/></svg></span><div><h3>Zuverlässigkeit</h3><p>Langjährige Erfahrung und gleichbleibende Qualität – seit 1854.</p></div></div>
+    <div class="wi"><span class="ic"><svg class="i"><use href="#ruler"/></svg></span><div><h3>Individualität</h3><p>Maßgeschneiderte Lösungen für jede Anforderung.</p></div></div>
+    <div class="wi"><span class="ic"><svg class="i"><use href="#shield"/></svg></span><div><h3>Qualität</h3><p>Hochwertige Produkte – Made in Germany.</p></div></div>
+    <div class="wi"><span class="ic"><svg class="i"><use href="#grid"/></svg></span><div><h3>Vielseitigkeit</h3><p>Ein breites Sortiment aus Dichtungen, Formteilen und Platten.</p></div></div>
+    <div class="wi"><span class="ic"><svg class="i"><use href="#bulb"/></svg></span><div><h3>Innovation</h3><p>Kontinuierliche Weiterentwicklung mit modernster Technologie.</p></div></div>
+    <div class="wi"><span class="ic"><svg class="i"><use href="#heart"/></svg></span><div><h3>Kundenzufriedenheit</h3><p>Ihre Zufriedenheit hat für uns oberste Priorität.</p></div></div>
+   </div>
+  </div>
+  <div class="wimg rv">
+   <img src="https://teguma.de/wp-content/uploads/2026/03/final-image-min-3.jpg" alt="Teguma Werk Halberstadt" loading="lazy">
+   <div class="bd"><b>200+</b><span>eigene Gummimischungen auf Basis von EPDM, NBR, SBR, Silikon, FKM und Naturkautschuk</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec grey" id="prozess">
+ <div class="wrap">
+  <div class="center rv"><span class="tag">So arbeiten wir</span><h2 class="title">Von der Idee zum Bauteil</h2></div>
+  <div class="steps">
+   <div class="st rv"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/Materialauswahl-und-Planung-fur-Gummiprodukte-3.png" alt="Materialauswahl und Planung" loading="lazy"><span class="no">01</span></div><div class="bd"><h3>Planung</h3><p>Wir prüfen Ihre Zeichnung, Ihr Muster oder Ihre technische Spezifikation und wählen aus über 200 eigenen Mischungen den passenden Werkstoff.</p></div></div>
+   <div class="st rv"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/Qualitatskontrolle-bei-der-Produktion-von-Gummiprodukten-3.png" alt="Qualitätskontrolle in der Produktion" loading="lazy"><span class="no">02</span></div><div class="bd"><h3>Produktion</h3><p>Gefertigt in Halberstadt – in kleinen wie in großen Stückzahlen, geprüft nach anerkannten Normen wie DIN ISO 3302-1.</p></div></div>
+   <div class="st rv"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/2150913773-min-3.png" alt="Lieferung" loading="lazy"><span class="no">03</span></div><div class="bd"><h3>Lieferung</h3><p>Zuverlässig und termingerecht: Die Lieferzeit beträgt in der Regel 1 bis 6 Wochen – abhängig von Auftrag und Anforderungen.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap ce">
+  <div class="rv">
+   <span class="tag">Qualität &amp; Normen</span>
+   <h2 class="title">Zertifiziert nach ISO 9001:2015</h2>
+   <p class="lead">Maßgebliche Normen für unsere Produkte sind unter anderem der Brandschutz im Schienenfahrzeugbau, das Brandverhalten von Baustoffen und die Toleranzklassen für Formteile.</p>
+   <div class="tags"><span>ISO 9001:2015</span><span>DIN EN 45545-2</span><span>DIN 5510-2</span><span>DIN 4102</span><span>DIN ISO 3302-1 · M1–M4</span></div>
+   <a href="https://teguma.de/zertifikate/" class="btn y">Zertifikate ansehen <svg class="i"><use href="#arrow"/></svg></a>
+  </div>
+  <div class="docs rv">
+   <a href="https://teguma.de/wp-content/uploads/2025/03/Teguma-Zertifikat-in-deutscher-Sprache-PDF_0001_page-0001.jpg" target="_blank" rel="noopener"><img src="https://teguma.de/wp-content/uploads/2025/03/Teguma-Zertifikat-in-deutscher-Sprache-PDF_0001_page-0001.jpg" alt="Teguma ISO 9001:2015 Zertifikat (Deutsch)" loading="lazy"></a>
+   <a href="https://teguma.de/wp-content/uploads/2025/03/Teguma-Zertifikat-in-englischer-Sprache-PDF_0001_page-0001.jpg" target="_blank" rel="noopener"><img src="https://teguma.de/wp-content/uploads/2025/03/Teguma-Zertifikat-in-englischer-Sprache-PDF_0001_page-0001.jpg" alt="Teguma ISO 9001:2015 Zertifikat (Englisch)" loading="lazy"></a>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <div><h2>Ihr Bauteil ist nicht dabei? Wir fertigen es für Sie.</h2><p>Senden Sie uns Ihre Zeichnung, Ihr Muster oder Ihre Spezifikation – wir beraten Sie persönlich.</p></div>
+  <div class="r">
+   <div class="ph"><span class="ic"><svg class="i"><use href="#phone"/></svg></span><span><small>Jetzt anrufen</small><b>+49 (0) 3941 / 24203</b></span></div>
+   <a href="#kontakt" class="btn k">Anfrage senden <svg class="i"><use href="#arrow"/></svg></a>
+  </div>
+ </div>
+</section>
+
+<section class="sec grey" id="faq">
+ <div class="wrap fq">
+  <div class="rv">
+   <span class="tag">Häufig gestellte Fragen</span>
+   <h2 class="title">Ihre Fragen – unsere Antworten</h2>
+   <div class="pp"><img src="https://teguma.de/wp-content/uploads/2026/11/Teguma-GmbH-.png" alt="Ansprechpartner der Teguma GmbH" loading="lazy"></div>
+  </div>
+  <div class="rv" style="padding-top:10px">
+   <details open><summary>Welche Produkte bietet Teguma an?</summary><p>Wir fertigen Dichtungen, Zuschnitte, Formteile und weitere Gummiprodukte für zahlreiche Branchen – von der Industrie bis zum Schienenfahrzeugbau.</p></details>
+   <details><summary>Wie lange dauert die Lieferung?</summary><p>Die Lieferzeit beträgt in der Regel 1 bis 6 Wochen – abhängig von Auftrag und Anforderungen.</p></details>
+   <details><summary>Fertigen Sie auch nach Kundenwunsch?</summary><p>Ja. Wir fertigen nach Ihrer Zeichnung, Ihrem Muster oder Ihrer technischen Spezifikation – in kleinen wie in großen Stückzahlen.</p></details>
+   <details><summary>Welche Qualitätsstandards erfüllen Ihre Produkte?</summary><p>Wir verfügen über mehr als 200 eigene Gummimischungen auf Basis von EPDM, NBR, SBR, Silikon, FKM und Naturkautschuk. Maßgebliche Normen sind u. a. DIN EN 45545-2, DIN 5510-2, DIN 4102 und DIN ISO 3302-1 (Toleranzklassen M1–M4).</p></details>
+   <details><summary>Ist Teguma zertifiziert?</summary><p>Ja, wir sind nach ISO 9001:2015 zertifiziert. Die Zertifikate finden Sie auf Deutsch und Englisch unter „Zertifikate“.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="kontakt">
+ <div class="wrap ct">
+  <div class="rv">
+   <span class="tag">Kontaktieren Sie uns</span>
+   <h2 class="title">Lassen Sie uns sprechen</h2>
+   <p class="lead">Erfahren Sie mehr über unsere Produkte. Ihre Anfrage geht direkt an das Team der Teguma GmbH in Halberstadt.</p>
+   <a class="ci" href="tel:+49394124203"><span class="ic"><svg class="i"><use href="#phone"/></svg></span><span><small>Telefon</small><b>+49 (0) 3941 / 24203</b></span></a>
+   <a class="ci" href="mailto:info@teguma.de"><span class="ic"><svg class="i"><use href="#mail"/></svg></span><span><small>E-Mail</small><b>info@teguma.de</b></span></a>
+   <div class="ci"><span class="ic"><svg class="i"><use href="#pin"/></svg></span><span><small>Standort</small><b>Bleichstraße 2, 38820 Halberstadt</b></span></div>
+  </div>
+  <form class="form rv" id="form" novalidate aria-label="Anfrage an die Teguma GmbH">
+   <div class="fin">
+    <h3>Anfrage an Teguma</h3>
+    <p class="sub">Ihre Anfrage geht direkt an unser Team in Halberstadt.</p>
+    <div class="fr"><input id="n" placeholder="Name*" required autocomplete="name" aria-label="Name"><input id="t" type="tel" placeholder="Telefonnummer*" required autocomplete="tel" aria-label="Telefonnummer"></div>
+    <input id="e" type="email" placeholder="E-Mail" autocomplete="email" aria-label="E-Mail">
+    <textarea id="m" placeholder="Ihre Nachricht – Produkt, Werkstoff, Stückzahl" aria-label="Nachricht"></textarea>
+    <div class="ft"><small>* Pflichtfelder · <a href="https://teguma.de/datenschutzerklarung/">Datenschutz</a></small><button class="btn y" type="submit">Jetzt einreichen <svg class="i"><use href="#arrow"/></svg></button></div>
+   </div>
+   <div class="ok" role="status"><h3>Vielen Dank!</h3><p class="sub">Ihre Anfrage ist bei der Teguma GmbH eingegangen. Wir melden uns in Kürze bei Ihnen.</p></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap fg">
+  <div><a class="lg" href="#"><img src="https://teguma.de/wp-content/uploads/2026/03/logo-teguma-1-2.png" alt="Teguma" width="112" height="44"></a><p>Teguma GmbH – zertifizierter Hersteller hochwertiger Gummiprodukte aus Halberstadt, seit dem 19. Jahrhundert.</p></div>
+  <div class="col"><h4>Navigation</h4><ul><li><a href="#">Startseite</a></li><li><a href="https://teguma.de/historie/">Historie</a></li><li><a href="https://teguma.de/produkte/">Produkte</a></li><li><a href="https://teguma.de/aktuelles/">Aktuelles</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+  <div class="col"><h4>Rechtliches</h4><ul><li><a href="https://teguma.de/impressum/">Impressum</a></li><li><a href="https://teguma.de/datenschutzerklarung/">Datenschutz</a></li><li><a href="https://teguma.de/verkaufsbedingungen/">Verkaufsbedingungen</a></li><li><a href="https://teguma.de/zertifikate/">Zertifikate</a></li></ul></div>
+  <div class="ctl"><h4>Kontakt</h4>
+   <a href="tel:+49394124203"><svg class="i"><use href="#phone"/></svg><span>+49 (0) 3941 / 24203</span></a>
+   <a href="mailto:info@teguma.de"><svg class="i"><use href="#mail"/></svg><span>info@teguma.de</span></a>
+   <a href="https://maps.google.com/?q=Bleichstraße+2,+38820+Halberstadt" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg><span>Bleichstraße 2<br>38820 Halberstadt</span></a>
+  </div>
+ </div>
+ <div class="fbot"><div class="wrap"><span>©2026 Teguma. Alle Rechte vorbehalten.</span><span>Made in Germany · Halberstadt</span></div></div>
+</footer>
+
+<script>
+(function(){
+ var b=document.getElementById('burger'),n=document.getElementById('nav');
+ b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open')})});
+ var f=document.getElementById('form');
+ f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}f.classList.add('sent')});
+ var els=[].slice.call(document.querySelectorAll('.rv'));
+ if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  els.forEach(function(e){e.classList.add('pre')});
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+ }
+})();
+</script>
+</body>
+</html>
