@@ -105,13 +105,13 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .scroll::after{content:"";position:absolute;left:50%;top:9px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--y);animation:wheel 1.8s var(--ease) infinite}
 @keyframes wheel{0%{opacity:0;transform:translateY(-4px)}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
 
-/* marquee */
-.mq{background:var(--y);color:var(--k);overflow:hidden;padding:26px 0;transform:rotate(-2deg) scale(1.04);margin:-30px 0 0;position:relative;z-index:5}
-.mq.b{background:var(--bg2);color:var(--tx);transform:rotate(1.5deg) scale(1.04);margin:-46px 0 0;z-index:4}
-.mq .tr{display:flex;width:max-content;gap:0;white-space:nowrap}
-.mq span{display:inline-flex;align-items:center;gap:40px;padding-right:40px;font-size:clamp(26px,3vw,46px);font-weight:700;letter-spacing:-.02em;text-transform:uppercase}
-.mq span i{width:14px;height:14px;background:currentColor;transform:rotate(45deg);display:block;opacity:.85}
-.mq.b span{color:transparent;-webkit-text-stroke:1.2px rgba(10,10,11,.55)}
+/* marquee: calm, straight, slow */
+.mq{position:relative;z-index:5;background:var(--y);color:var(--k);overflow:hidden;padding:20px 0;border-bottom:1px solid rgba(10,10,11,.12)}
+.mq .tr{display:flex;width:max-content;animation:mq 140s linear infinite}
+.mq:hover .tr{animation-play-state:paused}
+.mq span{display:inline-flex;align-items:center;gap:34px;padding-right:34px;font-size:clamp(15px,1.3vw,19px);font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.mq span i{width:8px;height:8px;background:var(--k);transform:rotate(45deg);display:block}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* INTRO statement */
 .intro{padding:180px 0 140px}
@@ -135,6 +135,20 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .ib3::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,11,.25),rgba(10,10,11,.88))}
 .ib3 .n{color:#fff}.ib3 .ar{background:#fff;color:var(--k)}.ib3 p{color:#D9DADC}
 
+/* AUF EINEN BLICK */
+.glance{padding:140px 0;background:var(--bg2)}
+.glance .grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:80px;align-items:center}
+.glance .h-l{font-size:clamp(34px,4.3vw,68px)}
+.glance .ph{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--k3)}
+.glance .ph img{width:100%;height:100%;object-fit:cover}
+.glance .bdg{position:absolute;left:20px;bottom:20px;background:var(--y);color:var(--k);border-radius:18px;padding:18px 26px}
+.glance .bdg b{display:block;font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.glance .bdg span{display:block;margin-top:6px;font-size:15px;font-weight:600}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 36px;margin:48px 0 44px}
+.feat .fi{width:60px;height:60px;border-radius:16px;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feat h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.feat p{font-size:17px;line-height:1.6;color:var(--tx2)}
+
 /* HISTORY reveal (pinned) */
 .hist{position:relative;height:100vh;overflow:hidden;background:#000}
 .hist .old,.hist .new{position:absolute;inset:0}
@@ -150,27 +164,25 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .hist .cap{font-size:18px;font-weight:500;max-width:340px;line-height:1.5;padding-bottom:14px}
 .hist .c1{color:#2A2A2A}.hist .c2{color:#fff;opacity:0;position:absolute;left:0;bottom:0}
 
-/* PRODUCTS horizontal */
-.prods{position:relative;background:var(--bg2);overflow:hidden}
-.prods .head{padding:150px 0 30px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
-.hsw{position:relative;height:100vh;display:flex;align-items:center;overflow:hidden}
-.hs{display:flex;gap:28px;padding:0 0 0 max(32px,calc((100vw - 1320px)/2));width:max-content}
-.pc{position:relative;width:min(460px,78vw);flex:0 0 auto;border-radius:28px;overflow:hidden;background:var(--k3);color:#fff;cursor:none;box-shadow:0 30px 60px -40px rgba(10,10,11,.5)}
-.pc .im{height:min(560px,72vh);overflow:hidden;background:#E9E9E9}
-.pc .im img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform 1.2s var(--ease)}
-.pc:hover .im img{transform:scale(1.02)}
-.pc .ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.5) 34%,transparent 60%);pointer-events:none}
-.pc .bd{position:absolute;left:0;right:0;bottom:0;padding:34px}
-.pc .no{position:absolute;top:26px;left:26px;height:42px;padding:0 16px;border-radius:999px;background:var(--y);color:var(--k);display:flex;align-items:center;font-weight:700;font-size:14px}
-.pc h3{font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
-.pc p{margin-top:12px;color:#B9BBBF;font-size:16px;line-height:1.5;max-height:0;opacity:0;overflow:hidden;transition:max-height .7s var(--ease),opacity .5s}
-.pc:hover p{max-height:120px;opacity:1}
-.pc .go{position:absolute;right:30px;bottom:34px;width:56px;height:56px;border-radius:50%;background:var(--w);color:var(--k);display:flex;align-items:center;justify-content:center;transform:scale(0) rotate(-90deg);transition:transform .6s var(--ease)}
-.pc:hover .go{transform:scale(1) rotate(0)}
-.pc.end{width:min(380px,70vw);background:var(--y);color:var(--k);display:flex;flex-direction:column;justify-content:space-between;padding:40px}
-.pc.end h3{font-size:44px;line-height:1}
-.hbar{position:absolute;left:max(32px,calc((100vw - 1320px)/2));right:max(32px,calc((100vw - 1320px)/2));bottom:5vh;height:2px;background:var(--line)}
-.hbar i{display:block;height:100%;width:100%;background:var(--y);transform-origin:0 50%;transform:scaleX(0)}
+/* PRODUCTS: calm grid */
+.prods{background:var(--bg);padding:150px 0}
+.prods .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.pg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:70px}
+.pc{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.pc:hover{border-color:var(--y);box-shadow:0 26px 50px -34px rgba(10,10,11,.4)}
+.pc .im{position:relative;aspect-ratio:4/3;overflow:hidden;background:#E9E9E9}
+.pc .im img{width:100%;height:100%;object-fit:cover}
+.pc .no{position:absolute;top:18px;right:18px;height:36px;padding:0 14px;border-radius:999px;background:rgba(10,10,11,.78);color:#fff;display:flex;align-items:center;font-weight:600;font-size:13px;letter-spacing:.08em}
+.pc .bd{display:flex;flex-direction:column;flex:1;padding:0 30px 30px}
+.pc .ic{width:60px;height:60px;border-radius:16px;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;margin-top:-30px;margin-bottom:22px;position:relative;box-shadow:0 0 0 6px #fff}
+.pc h3{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.pc p{margin-top:12px;color:var(--tx2);font-size:17px;line-height:1.6}
+.pc .more{margin-top:auto;padding-top:24px;display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.pc .more svg{transition:transform .3s}
+.pc:hover .more svg{transform:translateX(4px)}
+.pcta{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;margin-top:28px;padding:38px 44px;border-radius:22px;background:var(--y);color:var(--k)}
+.pcta small{display:block;font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;opacity:.65;margin-bottom:10px}
+.pcta h3{font-size:clamp(24px,2.5vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
 
 /* STATS */
 .stats{position:relative;background:var(--y);color:var(--k);padding:150px 0;overflow:hidden}
@@ -261,6 +273,10 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .cl small{display:block;color:var(--m);font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
 .cl b{font-size:clamp(20px,2vw,28px);font-weight:500}
 .cl i{font-style:normal;font-size:26px}
+.cl .ci{flex:0 0 auto;width:58px;height:58px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center}
+.cl .tx{flex:1;min-width:0}
+.cl .tx b{display:block;overflow-wrap:anywhere}
+.cl a>i{color:var(--m)}
 .form{background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:30px;padding:44px;box-shadow:0 50px 90px -50px rgba(10,10,11,.4)}
 .form h3{font-size:30px;font-weight:600;letter-spacing:-.02em}
 .form .sub{color:var(--m);margin:8px 0 30px}
@@ -284,7 +300,6 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .dark .outline{-webkit-text-stroke:1.5px rgba(255,255,255,.6)}
 .dark .y{color:var(--y)}
 .dark .btn-g{border-color:rgba(255,255,255,.28);color:#fff}.dark .btn-g .arr{background:rgba(255,255,255,.12)}.dark .btn-g:hover{color:var(--k)}
-.dark .hbar{background:rgba(255,255,255,.12)}
 .why.dark{background:var(--k2) !important}
 .dark .bx{background:var(--k3);border-color:rgba(255,255,255,.08);color:#fff}
 .dark .bx p{color:#9A9DA3}
@@ -301,6 +316,8 @@ footer{background:var(--bg2);padding:110px 0 0;overflow:hidden;border-top:1px so
 footer h4{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--m);font-weight:500;margin-bottom:22px}
 footer a{display:block;padding:6px 0;color:var(--tx2);transition:color .3s,transform .4s var(--ease)}
 footer a:hover{color:var(--k);transform:translateX(6px)}
+footer .ct a{display:flex;align-items:center;gap:14px;padding:8px 0}
+footer .ct .fi{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center}
 footer .lg img{height:52px;width:auto}
 footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
 .giant{display:flex;justify-content:space-between;width:100%;font-size:clamp(64px,17.5vw,300px);font-weight:900;letter-spacing:0;line-height:.8;margin-top:90px;padding-bottom:.04em;overflow:hidden;color:transparent;-webkit-text-stroke:1.5px rgba(10,10,11,.16);user-select:none;transition:color .6s}
@@ -315,7 +332,9 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  .hero .meta{display:none}
  .ibox{grid-template-columns:1fr 1fr}.ib3{grid-column:span 2}.sg{grid-template-columns:1fr 1fr}
  .sg .s:nth-child(n){padding-left:0;border-left:0}.sg .s:nth-child(2n){padding-left:30px;border-left:1.5px solid rgba(10,10,11,.2)}
- .proc .grid,.certs .grid,.faq .grid,.cta .grid{grid-template-columns:1fr}
+ .proc .grid,.certs .grid,.faq .grid,.cta .grid,.glance .grid{grid-template-columns:1fr}
+ .glance .ph{aspect-ratio:16/10}
+ .pg{grid-template-columns:1fr 1fr}
  .proc .vis{position:relative;top:0;height:420px}
  .proc .st{min-height:auto;padding:50px 0;opacity:1}
  .bento{grid-template-columns:1fr 1fr}
@@ -327,7 +346,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  .intro{padding:120px 0 90px}.ibox,.sg,.fr{grid-template-columns:1fr}.ib3{grid-column:auto}.ib{min-height:320px}
  .sg .s:nth-child(2n){padding-left:0;border-left:0}
  .bento{grid-template-columns:1fr;grid-auto-rows:auto}.bx{min-height:220px}.bx.wide,.bx.tall{grid-column:auto;grid-row:auto}.bx.img{min-height:320px}
- .hsw{height:auto;display:block}.hs{flex-direction:column;width:auto;padding:30px 20px 100px}.pc,.pc.end{width:100%}.pc .im{height:400px}.pc p{max-height:none;opacity:1}.pc .go{transform:none}.hbar{display:none}
+ .glance,.prods{padding:100px 0}.pg,.feats{grid-template-columns:1fr}.pcta{padding:30px 26px}.cl .ci{width:48px;height:48px}
  .docs{height:420px}
  .form{padding:28px}
  .fg{grid-template-columns:1fr}
@@ -394,8 +413,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  <div class="scroll" aria-hidden="true"></div>
 </section>
 
-<div class="mq" aria-hidden="true"><div class="tr" data-dir="1"><span>Gummiformteile <i></i> Dichtungen <i></i> Gummiplatten <i></i> Gummigewebe <i></i> Besenschläuche <i></i> Waggonbau <i></i></span><span>Gummiformteile <i></i> Dichtungen <i></i> Gummiplatten <i></i> Gummigewebe <i></i> Besenschläuche <i></i> Waggonbau <i></i></span></div></div>
-<div class="mq b" aria-hidden="true"><div class="tr" data-dir="-1"><span>EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span><span>EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span><span>EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span></div></div>
+<div class="mq" aria-hidden="true"><div class="tr"><span>Gummiformteile <i></i> Dichtungen <i></i> Gummiplatten <i></i> Gummigewebe <i></i> Besenschläuche <i></i> Waggonbau <i></i> EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span><span>Gummiformteile <i></i> Dichtungen <i></i> Gummiplatten <i></i> Gummigewebe <i></i> Besenschläuche <i></i> Waggonbau <i></i> EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span><span>Gummiformteile <i></i> Dichtungen <i></i> Gummiplatten <i></i> Gummigewebe <i></i> Besenschläuche <i></i> Waggonbau <i></i> EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span><span>Gummiformteile <i></i> Dichtungen <i></i> Gummiplatten <i></i> Gummigewebe <i></i> Besenschläuche <i></i> Waggonbau <i></i> EPDM <i></i> NBR <i></i> SBR <i></i> Silikon <i></i> FKM <i></i> Naturkautschuk <i></i></span></div></div>
 
 <section class="intro">
  <div class="wrap">
@@ -405,6 +423,23 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
    <div class="ib ib1 rv"><div class="tp"><span class="n">01</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Seit 1854</small><h3>Erfahrung</h3><p>Seit Mitte des 19. Jahrhunderts fertigen wir in Halberstadt – geführt als Familienbetrieb.</p></div></div>
    <div class="ib ib2 rv"><div class="tp"><span class="n">02</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>200+ Mischungen</small><h3>Kompetenz</h3><p>Über 200 eigene Gummimischungen für Industrie, Schienenfahrzeugbau und Elektrotechnik.</p></div></div>
    <a class="ib ib3 rv" href="#kontakt"><img src="https://teguma.de/wp-content/uploads/2026/03/Qualitatskontrolle-bei-der-Produktion-von-Gummiprodukten-3.png" alt=""><div class="tp"><span class="n">03</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
+  </div>
+ </div>
+</section>
+
+<section class="glance" id="auf-einen-blick">
+ <div class="wrap grid">
+  <div class="ph"><img src="https://teguma.de/wp-content/uploads/2026/03/Materialauswahl-und-Planung-fur-Gummiprodukte-3.png" alt="Materialauswahl und Planung für Gummiprodukte" loading="lazy"><div class="bdg"><b>Seit 1854</b><span>Familienbetrieb in Halberstadt</span></div></div>
+  <div>
+   <span class="label"><i></i>Ihr Vorteil</span>
+   <h2 class="h-l" style="margin-top:24px">Was Sie bei Teguma<br>erwarten <span class="y">können.</span></h2>
+   <div class="feats">
+    <div class="feat"><div class="fi"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 19l-5-10V3"/><path d="M7.5 15h9"/></svg></div><h3>Eigene Mischungen</h3><p>Über 200 eigene Gummimischungen auf Basis von EPDM, NBR, SBR, Silikon, FKM und Naturkautschuk.</p></div>
+    <div class="feat"><div class="fi"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21 21 3M14 4l6 6M4 14l6 6"/><path d="m16 8-2-2M8 16l-2-2"/></svg></div><h3>Fertigung nach Maß</h3><p>Nach Ihrer Zeichnung, Ihrem Muster oder Ihrer Spezifikation – in kleinen wie in großen Stückzahlen.</p></div>
+    <div class="feat"><div class="fi"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5L15.5 10"/></svg></div><h3>Geprüfte Qualität</h3><p>Zertifiziert nach ISO 9001:2015 und geprüft nach anerkannten Normen wie DIN ISO 3302-1 (M1–M4).</p></div>
+    <div class="feat"><div class="fi"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><h3>Verlässliche Lieferung</h3><p>Die Lieferzeit beträgt in der Regel 1 bis 6 Wochen – gefertigt in Halberstadt, Made in Germany.</p></div>
+   </div>
+   <a href="#kontakt" class="btn btn-y">Anfrage senden <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
  </div>
 </section>
@@ -420,23 +455,24 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  </div></div>
 </section>
 
-<section class="prods dark" id="produkte">
- <div class="wrap head">
-  <div><span class="label"><i></i>Teguma: Unsere Produkte</span><h2 class="h-l" style="margin-top:24px">Flexibilität und<br>Qualität in <span class="outline">jedem</span> Produkt</h2></div>
-  <a href="https://teguma.de/produkte/" class="btn btn-g mag">Alle Produkte erkunden <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
- </div>
- <div class="hsw" id="hsw">
- <div class="hs" id="hs">
-  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiformteile_waggonuebergaenge-01nn-512x384-1-2.webp" alt="Gummiformteile im Waggonbau"></div><div class="ov"></div><span class="no">01</span><div class="bd"><h3>Gummiformteile<br>im Waggonbau</h3><p>Formteile für Schienenfahrzeuge – brandschutzgerecht nach DIN EN 45545-2 und DIN 5510-2.</p></div><span class="go">→</span></a>
-  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-min-1-2.png" alt="Besenschläuche"></div><div class="ov"></div><span class="no">02</span><div class="bd"><h3>Besen&shy;schläuche</h3><p>Robuste Besen- und Bürstenschläuche für Kehr- und Reinigungstechnik.</p></div><span class="go">→</span></a>
-  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/Gummiformteile-07nn-512x384-1-2.jpg" alt="Gummiformteile"></div><div class="ov"></div><span class="no">03</span><div class="bd"><h3>Gummi&shy;formteile</h3><p>Individuelle Formteile nach Zeichnung, Muster oder Spezifikation – Toleranzklassen M1–M4.</p></div><span class="go">→</span></a>
-  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/dichtungen-01nn-512x384-1-2.jpg" alt="Gummidichtungen"></div><div class="ov"></div><span class="no">04</span><div class="bd"><h3>Gummi&shy;dichtungen</h3><p>Zuverlässige Dichtungen aus über 200 eigenen Gummimischungen.</p></div><span class="go">→</span></a>
-  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummigewebe-03nn-1024x644-1-1.jpg" alt="Gummigewebe"></div><div class="ov"></div><span class="no">05</span><div class="bd"><h3>Gummi&shy;gewebe</h3><p>Gewebeverstärkte Gummiwerkstoffe für hohe mechanische Belastungen.</p></div><span class="go">→</span></a>
-  <a class="pc" href="https://teguma.de/gummiplatten/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-512x384-1-2.jpg" alt="Gummiplatten"></div><div class="ov"></div><span class="no">06</span><div class="bd"><h3>Gummi&shy;platten</h3><p>Gummiplatten und Zuschnitte in vielen Qualitäten und Stärken.</p></div><span class="go">→</span></a>
-  <a class="pc end" href="#kontakt"><span class="label" style="color:rgba(10,10,11,.6)"><i style="background:#0A0A0B"></i>Sonderanfertigung</span><h3>Ihr Bauteil ist nicht dabei?</h3><span class="btn btn-k" style="align-self:flex-start">Anfrage senden <span class="arr">→</span></span></a>
- </div>
- </div>
- <div class="hbar"><i id="hbar"></i></div>
+<section class="prods" id="produkte">
+ <div class="wrap">
+  <div class="head">
+   <div><span class="label"><i></i>Teguma: Unsere Produkte</span><h2 class="h-l" style="margin-top:24px">Flexibilität und<br>Qualität in <span class="y">jedem</span> Produkt</h2></div>
+   <a href="https://teguma.de/produkte/" class="btn btn-g">Alle Produkte erkunden <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+  </div>
+  <div class="pg">
+  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiformteile_waggonuebergaenge-01nn-512x384-1-2.webp" alt="Gummiformteile im Waggonbau" loading="lazy"><span class="no">01</span></div><div class="bd"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/><circle cx="9" cy="14" r=".5"/><circle cx="15" cy="14" r=".5"/></svg></span><h3>Gummiformteile im Waggonbau</h3><p>Formteile für Schienenfahrzeuge – brandschutzgerecht nach DIN EN 45545-2 und DIN 5510-2.</p><span class="more">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-min-1-2.png" alt="Besenschläuche" loading="lazy"><span class="no">02</span></div><div class="bd"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9c3-4 6 4 9 0s6-4 9 0M3 16c3-4 6 4 9 0s6-4 9 0"/></svg></span><h3>Besenschläuche</h3><p>Robuste Besen- und Bürstenschläuche für Kehr- und Reinigungstechnik.</p><span class="more">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/Gummiformteile-07nn-512x384-1-2.jpg" alt="Gummiformteile" loading="lazy"><span class="no">03</span></div><div class="bd"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3ZM12 12l8-4.5M12 12v9M12 12 4 7.5"/></svg></span><h3>Gummiformteile</h3><p>Individuelle Formteile nach Zeichnung, Muster oder Spezifikation – Toleranzklassen M1–M4.</p><span class="more">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/dichtungen-01nn-512x384-1-2.jpg" alt="Gummidichtungen" loading="lazy"><span class="no">04</span></div><div class="bd"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg></span><h3>Gummidichtungen</h3><p>Zuverlässige Dichtungen aus über 200 eigenen Gummimischungen.</p><span class="more">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  <a class="pc" href="https://teguma.de/produkte/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummigewebe-03nn-1024x644-1-1.jpg" alt="Gummigewebe" loading="lazy"><span class="no">05</span></div><div class="bd"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 9.33h16M4 14.67h16M9.33 4v16M14.67 4v16"/></svg></span><h3>Gummigewebe</h3><p>Gewebeverstärkte Gummiwerkstoffe für hohe mechanische Belastungen.</p><span class="more">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  <a class="pc" href="https://teguma.de/gummiplatten/"><div class="im"><img src="https://teguma.de/wp-content/uploads/2026/03/gummiplatten-02nn-512x384-1-2.jpg" alt="Gummiplatten" loading="lazy"><span class="no">06</span></div><div class="bd"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3ZM3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg></span><h3>Gummiplatten</h3><p>Gummiplatten und Zuschnitte in vielen Qualitäten und Stärken.</p><span class="more">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+  </div>
+  <div class="pcta">
+   <div><small>Sonderanfertigung</small><h3>Ihr Bauteil ist nicht dabei? Wir fertigen es für Sie.</h3></div>
+   <a href="#kontakt" class="btn btn-k">Anfrage senden <span class="arr">→</span></a>
+  </div>
  </div>
 </section>
 
@@ -534,9 +570,9 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   <div class="grid">
    <div class="cl">
     <p class="lead" style="margin-bottom:30px">Erfahren Sie mehr über unsere Produkte. Ihre Anfrage geht direkt an das Team der Teguma GmbH in Halberstadt.</p>
-    <a href="tel:+49394124203"><span><small>Telefon</small><b>+49 (0) 3941 / 24203</b></span><i>↗</i></a>
-    <a href="mailto:info@teguma.de"><span><small>E-Mail</small><b>info@teguma.de</b></span><i>↗</i></a>
-    <div><span><small>Standort</small><b>Bleichstraße 2, 38820 Halberstadt</b></span></div>
+    <a href="tel:+49394124203"><span class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span><span class="tx"><small>Telefon</small><b>+49 (0) 3941 / 24203</b></span><i>↗</i></a>
+    <a href="mailto:info@teguma.de"><span class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="tx"><small>E-Mail</small><b>info@teguma.de</b></span><i>↗</i></a>
+    <div><span class="ci"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span class="tx"><small>Standort</small><b>Bleichstraße 2, 38820 Halberstadt</b></span></div>
    </div>
    <form class="form" id="form" novalidate aria-label="Anfrage an die Teguma GmbH">
     <div class="fin">
@@ -563,7 +599,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
    <div class="lg"><img src="https://teguma.de/wp-content/uploads/2026/03/logo-teguma-1-2.png" alt="Teguma" width="132" height="52"><p>Teguma GmbH – zertifizierter Hersteller hochwertiger Gummiprodukte aus Halberstadt, seit dem 19. Jahrhundert.</p></div>
    <div><h4>Navigation</h4><a href="https://teguma.de/">Startseite</a><a href="https://teguma.de/historie/">Historie</a><a href="https://teguma.de/produkte/">Produkte</a><a href="https://teguma.de/aktuelles/">Aktuelles</a><a href="https://teguma.de/kontakt/">Kontakt</a></div>
    <div><h4>Rechtliches</h4><a href="https://teguma.de/impressum/">Impressum</a><a href="https://teguma.de/datenschutzerklarung/">Datenschutz</a><a href="https://teguma.de/verkaufsbedingungen/">Verkaufsbedingungen</a><a href="https://teguma.de/zertifikate/">Zertifikate</a></div>
-   <div><h4>Kontakt</h4><a href="tel:+49394124203">+49 (0) 3941 / 24203</a><a href="mailto:info@teguma.de">info@teguma.de</a><a href="https://maps.google.com/?q=Bleichstraße+2,+38820+Halberstadt" target="_blank" rel="noopener">Bleichstraße 2<br>38820 Halberstadt</a></div>
+   <div class="ct"><h4>Kontakt</h4><a href="tel:+49394124203"><span class="fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span><span>+49 (0) 3941 / 24203</span></a><a href="mailto:info@teguma.de"><span class="fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>info@teguma.de</span></a><a href="https://maps.google.com/?q=Bleichstraße+2,+38820+Halberstadt" target="_blank" rel="noopener"><span class="fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span>Bleichstraße 2<br>38820 Halberstadt</span></a></div>
   </div>
   <div class="giant" id="giant" aria-hidden="true"><span>T</span><span>E</span><span>G</span><span>U</span><span>M</span><span>A</span></div>
   <div class="fb"><span>©2026 Teguma. Alle Rechte vorbehalten.</span><button class="totop" id="totop" aria-label="Nach oben">↑</button><span>Made in Germany · Halberstadt</span></div>
@@ -595,7 +631,6 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  var c1=$('#cur'),c2=$('#cur2'),mx=-100,my=-100,cx=-100,cy=-100;
  window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;c1.style.transform='translate('+mx+'px,'+my+'px)'});
  (function loop(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;c2.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
- $$('.pc:not(.end)').forEach(function(p){p.addEventListener('mouseenter',function(){c2.classList.add('big')});p.addEventListener('mouseleave',function(){c2.classList.remove('big')})});
 
  /* magnetic buttons */
  $$('.mag').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.35)+'px)'});b.addEventListener('mouseleave',function(){b.style.transform=''});b.style.transition='transform .5s cubic-bezier(.16,1,.3,1), color .5s'});
@@ -611,10 +646,6 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  /* smooth scroll */
  if(window.Lenis&&desk){window.lenis=new Lenis({lerp:.09,smoothWheel:true});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);
   $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1&&$(id)){e.preventDefault();lenis.scrollTo(id,{offset:-20,duration:1.6})}})});}
-
- /* marquees */
- $$('.mq .tr').forEach(function(t){var d=+t.dataset.dir;var tw=gsap.to(t,{xPercent:-50*d,ease:'none',duration:28,repeat:-1});if(d<0){gsap.set(t,{xPercent:-50})}
-  ScrollTrigger.create({onUpdate:function(s){gsap.to(tw,{timeScale:(s.direction*d)*(1+Math.min(Math.abs(s.getVelocity())/600,4)),duration:.4,overwrite:true})}});});
 
  /* preloader -> hero intro */
  var yr={v:1854},tl=gsap.timeline();
@@ -651,16 +682,6 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
    .to(['#y1','#c1'],{opacity:0,y:-40,ease:'power2.in',duration:.3},.15)
    .to('#y2',{opacity:1,ease:'power2.out',duration:.3},.55)
    .from('#y2 b',{yPercent:60,ease:'power3.out',duration:.35},.55);
-
- /* products horizontal */
- var mm=gsap.matchMedia();
- mm.add('(min-width: 701px)',function(){
-  var hs=$('#hs');
-  var dist=function(){return hs.scrollWidth-innerWidth+Math.max(32,(innerWidth-1320)/2)};
-  var tw=gsap.to(hs,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'#hsw',start:'top top',end:function(){return '+='+dist()},scrub:1,pin:true,invalidateOnRefresh:true}});
-  gsap.to('#hbar',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#hsw',start:'top top',end:function(){return '+='+dist()},scrub:true}});
-  $$('.pc .im img').forEach(function(im){gsap.fromTo(im,{xPercent:-8},{xPercent:8,ease:'none',scrollTrigger:{trigger:im.closest('.pc'),containerAnimation:tw,start:'left right',end:'right left',scrub:true}})});
- });
 
  /* stats counter */
  $$('.sg b').forEach(function(b){var to=+b.dataset.to,fr=+(b.dataset.from||0),suf=b.dataset.suf||'',plain=b.dataset.plain,o={v:fr};
