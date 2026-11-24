@@ -145,8 +145,12 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .bc h3{font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
 .bc p{font-size:17px;line-height:1.6;color:var(--tx2)}
 
+.glance.dark .bc{background:var(--k3);border-color:rgba(255,255,255,.08);color:#fff}
+.glance.dark .bc p{color:#B9BBBF}
+.glance.dark .bc:hover{border-color:rgba(255,204,1,.6);box-shadow:0 26px 50px -30px rgba(0,0,0,.9)}
+
 /* HISTORIE: static */
-.history{padding:140px 0;background:var(--bg)}
+.history{padding:140px 0;background:var(--bg2)}
 .history .hg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:70px}
 .hc{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
 .hc .im{aspect-ratio:16/10;overflow:hidden;background:#F2EFE6}
@@ -420,7 +424,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  </div>
 </section>
 
-<section class="glance" id="branchen">
+<section class="glance dark" id="branchen">
  <div class="wrap">
   <div class="head">
    <div><span class="label"><i></i>Einsatzbereiche</span><h2 class="h-l" style="margin-top:24px">Lösungen für<br>anspruchsvolle <span class="y">Branchen.</span></h2></div>
@@ -665,6 +669,11 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   if(!h.querySelector('.line')){h.innerHTML=h.innerHTML.split(/<br\s*\/?>/i).map(function(p){return '<span class="line"><span>'+p+'</span></span>'}).join('')}
   gsap.from($$('.line>span',h),{yPercent:110,duration:1.3,stagger:.08,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 86%'}});
  });
+
+ /* gentle entrance for cards (fade + short rise, no pinning) */
+ var cardSel='.br .bc, .pg .pc';
+ gsap.set(cardSel,{opacity:0,y:36});
+ ScrollTrigger.batch(cardSel,{start:'top 92%',once:true,onEnter:function(b){gsap.to(b,{opacity:1,y:0,duration:.9,stagger:.12,ease:'power2.out',overwrite:true,clearProps:'transform,opacity'})}});
 
  /* stats counter */
  $$('.sg b').forEach(function(b){var to=+b.dataset.to,fr=+(b.dataset.from||0),suf=b.dataset.suf||'',plain=b.dataset.plain,o={v:fr};
