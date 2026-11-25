@@ -166,6 +166,7 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .hb{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:70px;align-items:center;margin-top:70px}
 .hb .ph{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:#F2EFE6}
 .hb .ph img{width:100%;height:100%;object-fit:contain;padding:24px}
+.hb .ph img.cover{object-fit:cover;padding:0}
 .hb .big{font-size:clamp(70px,9vw,150px);font-weight:800;letter-spacing:-.05em;line-height:.85}
 .hb h3{font-size:clamp(24px,2.2vw,32px);font-weight:600;letter-spacing:-.02em;margin-top:22px;line-height:1.2}
 .hb p{margin-top:16px;font-size:19px;line-height:1.65;color:var(--tx2);max-width:520px}
@@ -206,17 +207,23 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .sg .s span{display:block;margin-top:14px;font-size:18px;font-weight:500}
 
 /* PROCESS sticky */
-.proc{padding:160px 0;background:var(--bg)}
-.proc .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;margin-top:80px}
-.proc .vis{position:sticky;top:120px;height:calc(100vh - 200px);max-height:680px;border-radius:30px;overflow:hidden}
-.proc .vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
-.proc .vis img.on{opacity:1;transform:scale(1)}
-.proc .vis .cnt{position:absolute;left:28px;bottom:24px;z-index:2;font-size:120px;font-weight:900;line-height:.8;color:var(--y);letter-spacing:-.06em;text-shadow:0 6px 30px rgba(0,0,0,.45)}
-.proc .st{min-height:72vh;display:flex;flex-direction:column;justify-content:center;gap:22px;border-top:1px solid var(--line);opacity:.25;transition:opacity .6s}
-.proc .st.on{opacity:1}
-.proc .st em{font-style:normal;color:#B08C00;font-weight:600;letter-spacing:.2em;font-size:14px}
-.proc .st h3{font-size:clamp(44px,5vw,80px);font-weight:700;letter-spacing:-.04em;line-height:1}
-.proc .st p{font-size:19px;line-height:1.65;color:var(--tx2);font-weight:300;max-width:500px}
+.proc{padding:160px 0;background:var(--bg2)}
+.proc .ph2{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.proc .ph2>p{max-width:380px;font-size:19px;line-height:1.6;color:var(--tx2);font-weight:300}
+.proc .spg{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:90px;padding-top:34px}
+.proc .spg::before{content:"";position:absolute;left:0;right:0;top:26px;height:2px;background:repeating-linear-gradient(90deg,rgba(10,10,11,.25) 0 8px,transparent 8px 16px)}
+.proc .sp{position:relative;transition:transform .5s var(--ease)}
+.proc .sp:hover{transform:translateY(-8px)}
+.proc .dot{position:absolute;left:0;top:-34px;z-index:2;width:54px;height:54px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;box-shadow:0 0 0 8px var(--bg2)}
+.proc .card{height:100%;background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .5s,border-color .3s}
+.proc .sp:hover .card{box-shadow:0 36px 60px -36px rgba(10,10,11,.4);border-color:var(--y)}
+.proc .pim{aspect-ratio:16/10;overflow:hidden;background:#EEEDE8}
+.proc .pim img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.proc .sp:hover .pim img{transform:scale(1.05)}
+.proc .pbd{padding:34px 32px 38px;display:flex;flex-direction:column;gap:12px;flex:1}
+.proc .pbd em{font-style:normal;color:#B08C00;font-weight:600;letter-spacing:.2em;font-size:13px}
+.proc .pbd h3{font-size:clamp(30px,2.6vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.proc .pbd p{font-size:17px;line-height:1.65;color:var(--tx2);font-weight:300}
 
 /* WHY bento */
 .why{padding:150px 0;background:var(--bg2)}
@@ -342,10 +349,9 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  .hero .meta{display:none}
  .ibox{grid-template-columns:1fr 1fr}.ib3{grid-column:span 2}.sg{grid-template-columns:1fr 1fr}
  .sg .s:nth-child(n){padding-left:0;border-left:0}.sg .s:nth-child(2n){padding-left:30px;border-left:1.5px solid rgba(10,10,11,.2)}
- .proc .grid,.certs .grid,.faq .grid,.cta .grid{grid-template-columns:1fr}
+ .certs .grid,.faq .grid,.cta .grid{grid-template-columns:1fr}
  .pg,.br{grid-template-columns:1fr 1fr}
- .proc .vis{position:relative;top:0;height:420px}
- .proc .st{min-height:auto;padding:50px 0;opacity:1}
+ .proc .spg{grid-template-columns:1fr;gap:56px}.proc .spg::before{display:none}.proc .dot{top:-27px}
  .bento{grid-template-columns:1fr 1fr}
  .fg{grid-template-columns:1fr 1fr}
 }
@@ -431,7 +437,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   <div class="ibox">
    <div class="ib ib1 rv"><div class="tp"><span class="n">01</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Seit 1854</small><h3>Erfahrung</h3><p>Seit Mitte des 19. Jahrhunderts fertigen wir in Halberstadt – geführt als Familienbetrieb.</p></div></div>
    <div class="ib ib2 rv"><div class="tp"><span class="n">02</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>200+ Mischungen</small><h3>Kompetenz</h3><p>Über 200 eigene Gummimischungen für Industrie, Schienenfahrzeugbau und Elektrotechnik.</p></div></div>
-   <a class="ib ib3 rv" href="#kontakt"><img src="https://teguma.de/wp-content/uploads/2026/03/Qualitatskontrolle-bei-der-Produktion-von-Gummiprodukten-3.png" alt=""><div class="tp"><span class="n">03</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
+   <a class="ib ib3 rv" href="#kontakt"><img src="https://teguma.de/wp-content/uploads/2026/03/Materialauswahl-und-Planung-fur-Gummiprodukte-3.png" alt=""><div class="tp"><span class="n">03</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
   </div>
  </div>
 </section>
@@ -456,11 +462,11 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   <span class="label"><i></i>Unsere Geschichte</span>
   <h2 class="h-l" style="margin-top:24px">Von 1854<br>bis <span class="y">heute.</span></h2>
   <div class="hb">
-   <div class="ph"><img src="https://teguma.de/wp-content/uploads/2026/03/teguma-halberstadt-1.webp" alt="Historische Ansicht des Teguma Werks in Halberstadt" loading="lazy"></div>
+   <div class="ph"><img class="cover" src="https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp" alt="Luftbild des Teguma Werks in Halberstadt" loading="lazy"></div>
    <div>
-    <div class="big">1854</div>
-    <h3>„Mechanische Manufactur technischer Gewebe“ – Halberstadt, Preussen.</h3>
-    <p>Aus der Manufaktur von damals ist ein zertifizierter Hersteller nach ISO 9001:2015 geworden – mit Kunden in über 25 Ländern.</p>
+    <div class="big">Heute</div>
+    <h3>Zertifizierter Hersteller in Halberstadt – seit über 170 Jahren als Familienbetrieb.</h3>
+    <p>Aus der „Mechanischen Manufactur technischer Gewebe“ von 1854 ist ein Hersteller nach ISO 9001:2015 geworden – mit über 200 eigenen Gummimischungen und Kunden in über 25 Ländern.</p>
     <div class="facts"><span>Familienbetrieb</span><span>Halberstadt</span><span>ISO 9001:2015</span><span>25+ Länder</span></div>
    </div>
   </div>
@@ -505,20 +511,11 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
 
 <section class="proc" id="prozess">
  <div class="wrap">
-  <span class="label"><i></i>So arbeiten wir</span>
-  <h2 class="h-l" style="margin-top:24px">Von der Idee<br>zum <span class="y">Bauteil.</span></h2>
-  <div class="grid">
-   <div class="vis" id="vis">
-    <img class="on" src="https://teguma.de/wp-content/uploads/2026/03/Materialauswahl-und-Planung-fur-Gummiprodukte-3.png" alt="Materialauswahl und Planung für Gummiprodukte">
-    <img src="https://teguma.de/wp-content/uploads/2026/03/Qualitatskontrolle-bei-der-Produktion-von-Gummiprodukten-3.png" alt="Qualitätskontrolle bei der Produktion von Gummiprodukten">
-    <img src="https://teguma.de/wp-content/uploads/2026/03/2150913773-min-3.png" alt="Lieferung von Gummiprodukten">
-    <span class="cnt" id="cnt">01</span>
-   </div>
-   <div>
-    <div class="st on" data-i="0"><em>SCHRITT 01</em><h3>Planung</h3><p>Wir prüfen Ihre Zeichnung, Ihr Muster oder Ihre technische Spezifikation und wählen aus über 200 eigenen Mischungen den passenden Werkstoff.</p></div>
-    <div class="st" data-i="1"><em>SCHRITT 02</em><h3>Produktion</h3><p>Gefertigt in Halberstadt – in kleinen wie in großen Stückzahlen, geprüft nach anerkannten Normen wie DIN ISO 3302-1.</p></div>
-    <div class="st" data-i="2"><em>SCHRITT 03</em><h3>Lieferung</h3><p>Zuverlässig und termingerecht: Die Lieferzeit beträgt in der Regel 1 bis 6 Wochen – abhängig von Auftrag und Anforderungen.</p></div>
-   </div>
+  <div class="ph2"><div><span class="label"><i></i>So arbeiten wir</span><h2 class="h-l" style="margin-top:24px">Von der Idee<br>zum <span class="y">Bauteil.</span></h2></div><p>In drei klaren Schritten von Ihrer Anfrage zum fertigen Gummiteil.</p></div>
+  <div class="spg">
+   <div class="sp rv"><span class="dot">01</span><div class="card"><div class="pim"><img src="https://teguma.de/wp-content/uploads/2026/03/Materialauswahl-und-Planung-fur-Gummiprodukte-3.png" alt="Materialauswahl und Planung für Gummiprodukte" loading="lazy"></div><div class="pbd"><em>SCHRITT 01</em><h3>Planung</h3><p>Wir prüfen Ihre Zeichnung, Ihr Muster oder Ihre technische Spezifikation und wählen aus über 200 eigenen Mischungen den passenden Werkstoff.</p></div></div></div>
+   <div class="sp rv"><span class="dot">02</span><div class="card"><div class="pim"><img src="https://teguma.de/wp-content/uploads/2026/03/Qualitatskontrolle-bei-der-Produktion-von-Gummiprodukten-3.png" alt="Qualitätskontrolle bei der Produktion von Gummiprodukten" loading="lazy"></div><div class="pbd"><em>SCHRITT 02</em><h3>Produktion</h3><p>Gefertigt in Halberstadt – in kleinen wie in großen Stückzahlen, geprüft nach anerkannten Normen wie DIN ISO 3302-1.</p></div></div></div>
+   <div class="sp rv"><span class="dot">03</span><div class="card"><div class="pim"><img src="https://teguma.de/wp-content/uploads/2026/03/2150913773-min-3.png" alt="Lieferung von Gummiprodukten" loading="lazy"></div><div class="pbd"><em>SCHRITT 03</em><h3>Lieferung</h3><p>Zuverlässig und termingerecht: Die Lieferzeit beträgt in der Regel 1 bis 6 Wochen – abhängig von Auftrag und Anforderungen.</p></div></div></div>
   </div>
  </div>
 </section>
@@ -697,10 +694,6 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   b.textContent=(plain?fr:fr.toLocaleString('de-DE'))+suf;
   gsap.to(o,{v:to,duration:2.2,ease:'power3.out',scrollTrigger:{trigger:b,start:'top 85%'},onUpdate:function(){var n=Math.round(o.v);b.textContent=(plain?String(n):n.toLocaleString('de-DE'))+suf}});});
  gsap.from('.sg .s',{y:60,opacity:0,stagger:.08,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:'.sg',start:'top 85%'}});
-
- /* process sticky swap */
- var imgs=$$('#vis img');
- $$('.proc .st').forEach(function(s){ScrollTrigger.create({trigger:s,start:'top 55%',end:'bottom 55%',onToggle:function(self){if(self.isActive){var i=+s.dataset.i;$$('.proc .st').forEach(function(o){o.classList.toggle('on',o===s)});imgs.forEach(function(im,k){im.classList.toggle('on',k===i)});$('#cnt').textContent='0'+(i+1)}}})});
 
  /* certs 3D on scroll */
  gsap.fromTo('.doc.d1',{rotateY:40,rotateZ:-12,x:-80,opacity:0},{rotateY:12,rotateZ:-5,x:0,opacity:1,ease:'none',scrollTrigger:{trigger:'#docs',start:'top 90%',end:'center 50%',scrub:1}});
