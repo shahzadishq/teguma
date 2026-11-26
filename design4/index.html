@@ -67,8 +67,8 @@ p{margin:0}
 .hr{display:flex;align-items:center;gap:18px;color:#fff}
 .lang{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em}.lang b{color:var(--y);font-weight:500}.lang a{opacity:.6}
 .hdr .btn{height:46px;padding:0 22px;font-size:15px}
-.hdr.s{background:rgba(12,13,14,.94);backdrop-filter:blur(12px);box-shadow:0 10px 30px -20px rgba(0,0,0,.6)}
-.hdr.s .wrap{height:72px}
+.hdr.scr{background:rgba(12,13,14,.94);backdrop-filter:blur(12px);box-shadow:0 10px 30px -20px rgba(0,0,0,.6)}
+.hdr.scr .wrap{height:72px}
 .burger{display:none;width:46px;height:46px;border-radius:4px;background:var(--y);border:0;cursor:pointer;align-items:center;justify-content:center}
 .mnav{position:fixed;inset:0;z-index:60;background:var(--k);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:40px;transform:translateY(-100%);transition:transform .6s var(--ease)}
 .mnav.open{transform:none}
@@ -92,10 +92,10 @@ p{margin:0}
 .hero h1 .mig{font-size:.42em;font-weight:500;letter-spacing:-.01em;color:#D7D9DC;display:inline-flex;align-items:center;gap:16px;margin-top:.5em}.hero h1 .mig::before{content:"";width:48px;height:2px;background:var(--y)}
 .hero h1 em{font-style:normal;color:var(--y);position:relative}
 .hero .sub{margin-top:28px;max-width:520px;font-size:19px;line-height:1.65;color:#B4B7BC;font-weight:300}
-.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
 .fade{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
 .hero.go .fade{opacity:1;transform:none}
-.spec{display:grid;grid-template-columns:repeat(3,auto);gap:0;margin-top:56px;border-top:1px solid var(--lineD);width:max-content;max-width:100%}
+.spec{display:grid;grid-template-columns:repeat(3,auto);gap:0;margin-top:48px;border-top:1px solid var(--lineD);width:max-content;max-width:100%}
 .spec div{padding:20px 34px 0 0;margin-right:34px;border-right:1px solid var(--lineD)}
 .spec div:last-child{border:0;margin:0}
 .spec b{display:block;font-size:30px;font-weight:700;letter-spacing:-.03em}
@@ -388,7 +388,7 @@ footer ul a:hover{color:var(--y)}
    <div class="mono fade" style="--d:.05s"><i></i>Gummitechnik aus Halberstadt · seit 1854</div>
    <h1><span class="ln"><span>Präzision</span></span><span class="ln"><span>in <em>Gummi.</em></span></span><span class="ln"><span class="mig">Made in Germany.</span></span></h1>
    <p class="sub fade" style="--d:.45s">Zertifizierter Hersteller hochwertiger Gummiprodukte – von Formteilen und Dichtungen bis zu Gummiplatten. Unser familiengeführter Betrieb liefert zuverlässige Lösungen seit dem 19. Jahrhundert.</p>
-   <div class="cta fade" style="--d:.6s">
+   <div class="acts fade" style="--d:.6s">
     <a class="btn btn-y" href="#produkte">Produkte entdecken <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn btn-o" href="#kontakt">Anfrage senden</a>
    </div>
@@ -648,7 +648,7 @@ footer ul a:hover{color:var(--y)}
  var t=$('#mqt');t.innerHTML+=t.innerHTML;
  /* header + to-top */
  var hdr=$('#hdr'),top=$('#top');
- function onS(){var y=scrollY;hdr.classList.toggle('s',y>40);top.classList.toggle('on',y>900);rail()}
+ function onS(){var y=scrollY;hdr.classList.toggle('scr',y>40);top.classList.toggle('on',y>900);rail()}
  addEventListener('scroll',onS,{passive:true});
  /* mobile nav */
  var mn=$('#mnav');$('#burger').onclick=function(){mn.classList.add('open')};$('#mx').onclick=function(){mn.classList.remove('open')};
