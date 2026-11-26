@@ -131,9 +131,15 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .ib2{background:var(--k);color:#fff}.ib2 .n{color:var(--y)}.ib2 .ar{background:var(--y);color:var(--k)}.ib2 p{color:#B9BBBF}
 .ib2::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(255,204,1,.12);z-index:-1;transition:transform 1s var(--ease)}
 .ib2:hover::after{transform:scale(1.25)}
-.ib3{color:#fff}.ib3 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}.ib3:hover img{transform:scale(1.08)}
-.ib3::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,11,.25),rgba(10,10,11,.88))}
-.ib3 .n{color:#fff}.ib3 .ar{background:#fff;color:var(--k)}.ib3 p{color:#D9DADC}
+.ib3{background:#F2EFE6;color:var(--k)}
+.ib3 .n{color:var(--k)}.ib3 .ar{background:var(--k);color:var(--y)}.ib3 p{color:rgba(10,10,11,.72)}
+.ib3>div:last-child{position:relative;z-index:1;max-width:55%}
+.ib3 .who{position:absolute;right:0;bottom:0;height:78%;width:auto;max-width:48%;object-fit:contain;object-position:bottom;z-index:0;transition:transform 1s var(--ease);transform-origin:bottom center}
+.ib3:hover .who{transform:scale(1.04)}
+.ib3::before{content:"";position:absolute;right:-50px;bottom:-70px;width:260px;height:260px;border-radius:50%;background:var(--y);z-index:-1;transition:transform 1s var(--ease)}
+.ib3:hover::before{transform:scale(1.08)}
+.ib3 .tag{position:absolute;right:20px;bottom:24px;z-index:2;background:#fff;border-radius:40px;padding:8px 14px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 14px 30px -14px rgba(10,10,11,.35)}
+.ib3 .tag i{width:8px;height:8px;border-radius:50%;background:#2BB673;box-shadow:0 0 0 4px rgba(43,182,115,.18)}
 
 /* HISTORY reveal (pinned) */
 .hist{position:relative;height:100vh;overflow:hidden;background:#000}
@@ -411,7 +417,7 @@ footer .ct .fi{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background
   <div class="ibox">
    <div class="ib ib1 rv"><div class="tp"><span class="n">01</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Seit 1854</small><h3>Erfahrung</h3><p>Seit Mitte des 19. Jahrhunderts fertigen wir in Halberstadt – geführt als Familienbetrieb.</p></div></div>
    <div class="ib ib2 rv"><div class="tp"><span class="n">02</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>200+ Mischungen</small><h3>Kompetenz</h3><p>Über 200 eigene Gummimischungen für Industrie, Schienenfahrzeugbau und Elektrotechnik.</p></div></div>
-   <a class="ib ib3 rv" href="#kontakt"><img src="https://teguma.de/wp-content/uploads/2026/03/Qualitatskontrolle-bei-der-Produktion-von-Gummiprodukten-3.png" alt=""><div class="tp"><span class="n">03</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
+   <a class="ib ib3 rv" href="#kontakt"><img class="who" src="../assets/teguma-beratung.webp" alt="Ihr persönlicher Ansprechpartner bei Teguma" loading="lazy"><span class="tag"><i></i>Persönlicher Ansprechpartner</span><div class="tp"><span class="n">03</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
   </div>
  </div>
 </section>
