@@ -195,8 +195,8 @@ p{margin:0}
 .ba .knob{position:absolute;top:50%;left:var(--x,50%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .ba .tg{position:absolute;bottom:18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;padding:7px 11px;border-radius:4px}
 .ba .t1{left:18px;background:var(--k);color:var(--y)}.ba .t2{right:18px;background:var(--y);color:var(--k)}
-.yrs{display:flex;align-items:baseline;gap:18px;font-weight:800;letter-spacing:-.05em;line-height:.85}
-.yrs b{font-size:clamp(64px,7vw,110px)}
+.yrs{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:-.05em;line-height:.85}
+.yrs b{font-size:clamp(40px,3.6vw,54px)}
 .yrs svg{color:var(--y);flex:none}
 .hist h3{font-size:clamp(24px,2.2vw,30px);font-weight:600;margin-top:28px;line-height:1.25}
 .hist .lead{margin-top:16px}
@@ -229,8 +229,9 @@ p{margin:0}
 .st .node .ico{width:30px;height:30px}
 .st em{display:block;margin-top:32px;font-style:normal;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;color:#9C7D00}
 .st h3{font-size:clamp(32px,3vw,44px);font-weight:700;margin-top:12px}
-.st p{margin-top:14px;color:var(--tx2);line-height:1.65;max-width:360px}
-.st .img{margin-top:28px;aspect-ratio:16/10;border-radius:8px;overflow:hidden}
+.st{display:flex;flex-direction:column}
+.st p{margin:14px 0 28px;color:var(--tx2);line-height:1.65;max-width:360px}
+.st .img{margin-top:auto;width:100%;aspect-ratio:16/10;border-radius:8px;overflow:hidden}
 .st .img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
 .st:hover .img img{transform:scale(1.05)}
 
@@ -352,7 +353,7 @@ footer ul a:hover{color:var(--y)}
  .sgrid{grid-template-columns:1fr 1fr}.s{padding:0 0 0 18px}.s:nth-child(odd){border:0;padding-left:0}.s:nth-child(4){border-left:1.5px solid rgba(12,13,14,.18);padding-left:18px}
  .docs{height:400px}.doc{width:190px}.seal{width:104px;height:104px;right:0}
  .form{padding:30px 22px}
- .yrs b{font-size:56px}.yrs{gap:12px}.hist h3{font-size:22px}
+ .yrs b{font-size:40px}.yrs{gap:10px}.hist h3{font-size:22px}
  .q button{font-size:18px}
  .fgrid{grid-template-columns:1fr}
 }
@@ -493,7 +494,7 @@ footer ul a:hover{color:var(--y)}
     <span class="tg t1">1854</span><span class="tg t2">HEUTE</span>
    </div>
    <div>
-    <div class="yrs rv"><b>1854</b><svg width="46" height="28" viewBox="0 0 46 28" fill="currentColor" aria-hidden="true"><path d="M0 0h18l14 14-14 14H0l14-14z"/><path d="M18 0h14l14 14-14 14H18l14-14z" opacity=".45"/></svg><b>Heute</b></div>
+    <div class="yrs rv"><b>1854</b><svg width="30" height="18" viewBox="0 0 46 28" fill="currentColor" aria-hidden="true"><path d="M0 0h18l14 14-14 14H0l14-14z"/><path d="M18 0h14l14 14-14 14H18l14-14z" opacity=".45"/></svg><b>Heute</b></div>
     <h3 class="rv" style="--d:.08s">Aus der „Mechanischen Manufactur technischer Gewebe“ wurde ein Hersteller nach ISO 9001:2015.</h3>
     <p class="lead rv" style="--d:.16s">Seit über 170 Jahren als Familienbetrieb in Halberstadt – heute mit über 200 eigenen Gummimischungen und Kunden in über 25 Ländern.</p>
     <ul class="tl rv" style="--d:.24s">
