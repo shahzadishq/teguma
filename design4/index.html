@@ -176,11 +176,11 @@ p{margin:0}
 .ind{position:relative;padding:140px 0;background-color:var(--k);background-image:var(--chev);overflow:hidden}
 .ind .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:end}
 .igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:80px;background:var(--lineD);border:1px solid var(--lineD);border-radius:10px;overflow:hidden}
-.i{position:relative;background:var(--k);padding:40px 32px 44px;min-height:330px;display:flex;flex-direction:column;overflow:hidden;transition:background .5s}
+.i{position:relative;background:var(--k);padding:40px 32px 44px;min-height:300px;display:flex;flex-direction:column;overflow:hidden;transition:background .5s}
 .i::before{content:"";position:absolute;inset:auto -40% -60% auto;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,204,1,.22),transparent 65%);opacity:0;transition:opacity .6s}
 .i:hover{background:var(--k2)}.i:hover::before{opacity:1}
 .i .ico{width:44px;height:44px;color:var(--y);stroke-width:1.3}
-.i .mono{color:var(--m);margin-top:auto;padding-top:40px}
+.i .mono{color:var(--m);margin-top:48px}
 .i h3{font-size:26px;font-weight:600;margin-top:10px}
 .i p{color:#9EA1A6;font-size:15.5px;margin-top:12px;line-height:1.6}
 
@@ -322,7 +322,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px;font
 footer h4{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--y);font-weight:500}
 footer ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px;font-size:15.5px}
 footer ul a:hover{color:var(--y)}
-.big{font-size:clamp(80px,18vw,280px);font-weight:800;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.12);margin-top:80px;white-space:nowrap;text-align:center}
+.big{font-size:clamp(80px,18vw,280px);font-weight:800;letter-spacing:-.06em;line-height:.8;color:rgba(255,255,255,.035);margin-top:80px;white-space:nowrap;text-align:center}
 .fb{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;margin-top:30px;border-top:1px solid var(--lineD);font-size:14px;color:var(--m)}
 .totop{position:fixed;right:24px;bottom:24px;z-index:40;width:52px;height:52px;border-radius:6px;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s var(--ease)}
 .totop.on{opacity:1;transform:none}
