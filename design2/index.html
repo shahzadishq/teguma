@@ -118,9 +118,9 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .intro .stmt{font-size:clamp(30px,3.9vw,64px);line-height:1.15;font-weight:500;letter-spacing:-.03em;max-width:1200px}
 .intro .stmt .w{display:inline-block;opacity:.14;transition:opacity .2s}
 .ibox{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:100px}
-.ib{position:relative;border-radius:30px;padding:40px;min-height:380px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.ib{position:relative;border-radius:30px;padding:40px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
 .ib:hover{transform:translateY(-10px);box-shadow:0 40px 70px -35px rgba(10,10,11,.45)}
-.ib .tp{display:flex;justify-content:space-between;align-items:flex-start}
+.ib .tp{display:flex;justify-content:flex-end;align-items:flex-start}
 .ib .n{font-size:clamp(84px,8vw,128px);font-weight:800;letter-spacing:-.06em;line-height:.78}
 .ib .ar{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .6s var(--ease)}
 .ib:hover .ar{transform:rotate(-45deg)}
@@ -129,17 +129,8 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .ib p{font-size:17px;line-height:1.6;font-weight:400}
 .ib1{background:var(--y);color:var(--k)}.ib1 .n{color:var(--k)}.ib1 .ar{background:var(--k);color:var(--y)}.ib1 p{color:rgba(10,10,11,.75)}
 .ib2{background:var(--k);color:#fff}.ib2 .n{color:var(--y)}.ib2 .ar{background:var(--y);color:var(--k)}.ib2 p{color:#B9BBBF}
-.ib2::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(255,204,1,.12);z-index:-1;transition:transform 1s var(--ease)}
-.ib2:hover::after{transform:scale(1.25)}
-.ib3{background:#F2EFE6;color:var(--k)}
+.ib3{background:#fff;color:var(--k);border:1px solid var(--line)}
 .ib3 .n{color:var(--k)}.ib3 .ar{background:var(--k);color:var(--y)}.ib3 p{color:rgba(10,10,11,.72)}
-.ib3>div:last-child{position:relative;z-index:1;max-width:55%}
-.ib3 .who{position:absolute;right:0;bottom:0;height:78%;width:auto;max-width:48%;object-fit:contain;object-position:bottom;z-index:0;transition:transform 1s var(--ease);transform-origin:bottom center}
-.ib3:hover .who{transform:scale(1.04)}
-.ib3::before{content:"";position:absolute;right:-50px;bottom:-70px;width:260px;height:260px;border-radius:50%;background:var(--y);z-index:-1;transition:transform 1s var(--ease)}
-.ib3:hover::before{transform:scale(1.08)}
-.ib3 .tag{position:absolute;right:20px;bottom:24px;z-index:2;background:#fff;border-radius:40px;padding:8px 14px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 14px 30px -14px rgba(10,10,11,.35)}
-.ib3 .tag i{width:8px;height:8px;border-radius:50%;background:#2BB673;box-shadow:0 0 0 4px rgba(43,182,115,.18)}
 
 /* BRANCHEN */
 .glance{padding:140px 0;background:var(--bg2)}
@@ -180,6 +171,30 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .hb .facts span{height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;font-weight:500;font-size:15px}
 .hb .facts span:first-child{background:var(--y);border-color:var(--y)}
 @media (max-width:900px){.hb{grid-template-columns:1fr;gap:40px}}
+/* HISTORIE: 1854 / Heute Vorher-Nachher-Slider */
+.hx{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:70px;align-items:center;margin-top:70px}
+.ba{position:relative;aspect-ratio:16/10;border-radius:28px;overflow:hidden;cursor:ew-resize;user-select:none;touch-action:pan-y;background:#F4F0E4}
+.ba img{position:absolute;inset:0;width:100%;height:100%}
+.ba .now{object-fit:cover}
+.ba .old{object-fit:contain;padding:4% 6%;background:#F4F0E4;filter:sepia(.35) contrast(1.05);clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:var(--y);transform:translateX(-1px)}
+.ba .knob{position:absolute;top:50%;left:var(--x,50%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.ba .tg{position:absolute;bottom:18px;font-size:12px;font-weight:600;letter-spacing:.12em;padding:7px 13px;border-radius:999px}
+.ba .t1{left:18px;background:var(--k);color:var(--y)}.ba .t2{right:18px;background:var(--y);color:var(--k)}
+.yrs{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:-.05em;line-height:.85}
+.yrs b{font-size:clamp(40px,3.6vw,54px)}
+.yrs svg{color:var(--y);flex:none}
+.hx h3{font-size:clamp(24px,2.2vw,30px);font-weight:600;letter-spacing:-.02em;margin-top:28px;line-height:1.25}
+.hx p{margin-top:16px;font-size:18px;line-height:1.65;color:var(--tx2)}
+.tl{list-style:none;margin:34px 0 0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 20px 26px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg2);border:2px solid var(--y)}
+.tl li:last-child{padding-bottom:0}.tl li:last-child::before{background:var(--y)}
+.tl b{font-size:13px;font-weight:600;letter-spacing:.08em;color:#9C7D00;display:block}
+.tl span{font-size:16.5px}
+@media (max-width:900px){.hx{grid-template-columns:1fr;gap:44px}}
+@media (max-width:700px){.yrs b{font-size:40px}.yrs{gap:10px}.hx h3{font-size:22px}}
+
 
 /* PRODUCTS: calm grid */
 .prods{background:var(--bg);padding:150px 0}
@@ -271,7 +286,7 @@ section:not(.hero):not(.hist):not(.dark) .y{color:inherit;background:linear-grad
 .faq .pp a{position:absolute;left:18px;right:18px;bottom:18px;height:64px;border-radius:999px;color:#fff;background:rgba(10,10,11,.85);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 24px;font-weight:600}
 .faq .pp a i{width:46px;height:46px;border-radius:50%;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-style:normal}
 .qa{border-bottom:1px solid var(--line)}
-.qa button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px 0;background:none;border:0;cursor:pointer;text-align:left;font-size:clamp(20px,1.7vw,26px);font-weight:500;letter-spacing:-.01em}
+.qa button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:44px 0;background:none;border:0;cursor:pointer;text-align:left;font-size:clamp(22px,2.1vw,32px);font-weight:600;letter-spacing:-.01em}
 .qa .pm{position:relative;flex:0 0 auto;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);transition:background .4s,border-color .4s,transform .5s var(--ease)}
 .qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;margin:-1px 0 0 -8px;background:currentColor;transition:transform .5s var(--ease)}
 .qa .pm::after{transform:rotate(90deg)}
@@ -419,9 +434,9 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   </div>
   <span class="label hfade"><i></i>Teguma GmbH · Halberstadt</span>
   <h1 class="h-xl" style="margin-top:26px">
-   <span class="line"><span>Seit dem</span></span>
-   <span class="line"><span>19. Jahrhundert</span></span>
-   <span class="line"><span class="y">zuverlässig.</span></span>
+   <span class="line"><span>Gummitechnik</span></span>
+   <span class="line"><span>aus Halberstadt.</span></span>
+   <span class="line"><span class="y">Seit 1854.</span></span>
   </h1>
   <div class="top">
    <p class="lead hfade">Zertifizierter Hersteller hochwertiger Gummiprodukte. Unser familiengeführter Betrieb bietet zuverlässige Lösungen seit dem 19. Jahrhundert.</p>
@@ -441,9 +456,9 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
   <span class="label"><i></i>Teguma Halberstadt</span>
   <p class="stmt" id="stmt" style="margin-top:40px">Unser Familienbetrieb besteht seit Mitte des 19. Jahrhunderts und zeichnet sich durch hochwertige Gummierzeugnisse aus. Kundenzufriedenheit und Zuverlässigkeit stehen bei uns an erster Stelle.</p>
   <div class="ibox">
-   <div class="ib ib1 rv"><div class="tp"><span class="n">01</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Seit 1854</small><h3>Erfahrung</h3><p>Seit Mitte des 19. Jahrhunderts fertigen wir in Halberstadt – geführt als Familienbetrieb.</p></div></div>
-   <div class="ib ib2 rv"><div class="tp"><span class="n">02</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>200+ Mischungen</small><h3>Kompetenz</h3><p>Über 200 eigene Gummimischungen für Industrie, Schienenfahrzeugbau und Elektrotechnik.</p></div></div>
-   <a class="ib ib3 rv" href="#kontakt"><img class="who" src="../assets/teguma-beratung.webp" alt="Ihr persönlicher Ansprechpartner bei Teguma" loading="lazy"><span class="tag"><i></i>Persönlicher Ansprechpartner</span><div class="tp"><span class="n">03</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
+   <div class="ib ib1 rv"><div class="tp"><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Seit 1854</small><h3>Erfahrung</h3><p>Seit Mitte des 19. Jahrhunderts fertigen wir in Halberstadt – geführt als Familienbetrieb.</p></div></div>
+   <div class="ib ib2 rv"><div class="tp"><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>200+ Mischungen</small><h3>Kompetenz</h3><p>Über 200 eigene Gummimischungen für Industrie, Schienenfahrzeugbau und Elektrotechnik.</p></div></div>
+   <a class="ib ib3 rv" href="#kontakt"><div class="tp"><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div><div><small>Persönlich</small><h3>Beratung</h3><p>Unser erfahrenes Team steht Ihnen für Fragen und Beratung zur Verfügung.</p></div></a>
   </div>
  </div>
 </section>
@@ -467,13 +482,24 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  <div class="wrap">
   <span class="label"><i></i>Unsere Geschichte</span>
   <h2 class="h-l" style="margin-top:24px">Von 1854<br>bis <span class="y">heute.</span></h2>
-  <div class="hb">
-   <div class="ph"><img class="cover" src="https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp" alt="Luftbild des Teguma Werks in Halberstadt" loading="lazy"></div>
+  <div class="hx">
+   <div class="ba rv" id="ba" style="--x:50%" role="slider" aria-label="Vergleich 1854 und heute" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+    <img class="now" src="https://teguma.de/wp-content/uploads/2026/11/teguma-luftbild-halberstadt.webp" alt="Teguma Werk in Halberstadt heute, Luftaufnahme" loading="lazy" draggable="false">
+    <img class="old" src="https://teguma.de/wp-content/uploads/2026/03/Halberstadt-min-1.webp" alt="Historische Ansicht der Mechanischen Manufactur technischer Gewebe in Halberstadt" loading="lazy" draggable="false">
+    <span class="bar"></span>
+    <span class="knob" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+    <span class="tg t1">1854</span><span class="tg t2">HEUTE</span>
+   </div>
    <div>
-    <div class="big">Heute</div>
-    <h3>Zertifizierter Hersteller in Halberstadt – seit über 170 Jahren als Familienbetrieb.</h3>
-    <p>Aus der „Mechanischen Manufactur technischer Gewebe“ von 1854 ist ein Hersteller nach ISO 9001:2015 geworden – mit über 200 eigenen Gummimischungen und Kunden in über 25 Ländern.</p>
-    <div class="facts"><span>Familienbetrieb</span><span>Halberstadt</span><span>ISO 9001:2015</span><span>25+ Länder</span></div>
+    <div class="yrs"><b>1854</b><svg width="30" height="18" viewBox="0 0 46 28" fill="currentColor" aria-hidden="true"><path d="M0 0h18l14 14-14 14H0l14-14z"/><path d="M18 0h14l14 14-14 14H18l14-14z" opacity=".45"/></svg><b>Heute</b></div>
+    <h3>Aus der „Mechanischen Manufactur technischer Gewebe“ wurde ein Hersteller nach ISO 9001:2015.</h3>
+    <p>Seit über 170 Jahren als Familienbetrieb in Halberstadt – heute mit über 200 eigenen Gummimischungen und Kunden in über 25 Ländern.</p>
+    <ul class="tl">
+     <li><b>1854</b><span>Gründung in Halberstadt, Preussen</span></li>
+     <li><b>200+</b><span>eigene Gummimischungen auf Basis von EPDM, NBR, SBR, Silikon, FKM und Naturkautschuk</span></li>
+     <li><b>Heute</b><span>Zertifiziert nach ISO 9001:2015 · Kunden in über 25 Ländern</span></li>
+    </ul>
+    <a class="btn btn-k" style="margin-top:36px" href="https://teguma.de/historie/">Zur Historie <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
    </div>
   </div>
  </div>
@@ -562,7 +588,7 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
  <div class="wrap grid">
   <div>
    <span class="label"><i></i>Häufig gestellte Fragen</span>
-   <h2 class="h-l" style="margin-top:24px">Ihre Fragen –<br>unsere Antworten</h2>
+   <h2 class="h-l" style="margin-top:24px">Ihre Fragen,<br>unsere Antworten</h2>
    <div class="pp rv"><img src="https://teguma.de/wp-content/uploads/2026/11/Teguma-GmbH-.png" alt="Ansprechpartner der Teguma GmbH"><a href="tel:+49394124203">+49 (0) 3941 / 24203 <i>↗</i></a></div>
   </div>
   <div id="faqL" style="padding-top:20px">
@@ -713,6 +739,17 @@ footer .lg p{color:var(--m);margin-top:22px;line-height:1.7;max-width:320px}
 
  /* giant footer letters */
  gsap.from('#giant span',{yPercent:100,opacity:0,stagger:.06,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'#giant',start:'top 95%'}});
+
+ /* 1854 / Heute slider */
+ var ba=$('#ba');
+ if(ba){var baDrag=false;
+  var setX=function(cx){var r=ba.getBoundingClientRect(),x=Math.min(Math.max((cx-r.left)/r.width*100,2),98);ba.style.setProperty('--x',x+'%');ba.setAttribute('aria-valuenow',Math.round(x))};
+  ba.addEventListener('pointerdown',function(e){baDrag=true;ba.setPointerCapture(e.pointerId);setX(e.clientX)});
+  ba.addEventListener('pointermove',function(e){if(baDrag)setX(e.clientX)});
+  ba.addEventListener('pointerup',function(){baDrag=false});
+  ba.addEventListener('keydown',function(e){var v=+ba.getAttribute('aria-valuenow');if(e.key==='ArrowLeft'||e.key==='ArrowRight'){v+=e.key==='ArrowLeft'?-5:5;v=Math.min(Math.max(v,2),98);ba.style.setProperty('--x',v+'%');ba.setAttribute('aria-valuenow',v);e.preventDefault()}});
+  var bo=new IntersectionObserver(function(es){if(es[0].isIntersecting){bo.disconnect();if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var t0=null;var f=function(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1800,1),x=50+28*Math.sin(p*Math.PI*2)*(1-p);ba.style.setProperty('--x',x+'%');if(p<1&&!baDrag)requestAnimationFrame(f)};setTimeout(function(){requestAnimationFrame(f)},700)}},{threshold:.5});bo.observe(ba);
+ }
 
  window.addEventListener('load',function(){ScrollTrigger.refresh()});
 })();
